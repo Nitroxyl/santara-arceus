@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d1a">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="A personal encounter with Arceus.">
+  <title>Hins · A Dream Beyond Time | Santara</title>
+  <link rel="stylesheet" href="../../styles/site.css">
+</head>
+<body>
+  <main class="experience">
+    <div class="stars" aria-hidden="true"></div>
+    <header class="hud">
+      <span class="hud-brand">S A N T A R A</span>
+      <span class="hud-chapter" id="hud-chapter">AN INVITATION</span>
+    </header>
+    <div class="stage" aria-hidden="true">
+      <div class="aura"></div>
+      <div class="sacred">
+        <div class="sacred-circle outer"></div>
+        <div class="sacred-circle inner"></div>
+        <div class="sacred-geometry"></div>
+        <div class="sacred-center">✧</div>
+        <div class="sacred-label" id="sigil-label">BEYOND SLEEP</div>
+      </div>
+    </div>
+    <div class="vision-overlay" id="intro-wrap">
+      <section class="intro" id="intro" aria-labelledby="intro-title">
+        <p class="eyebrow">A MESSAGE FOR <span id="player-name">Hins</span></p>
+        <h1 id="intro-title">A dream beyond time</h1>
+        <span class="ornament" aria-hidden="true">✧</span>
+        <p class="intro-copy">There is a place between sleep and waking where even the stars fall silent. Tonight, something is waiting for you there.</p>
+        <button class="action" id="start" type="button">Enter the dream</button>
+        <p class="intro-note">Headphones optional · Click or press Space to continue</p>
+      </section>
+      <section class="ending hidden" id="ending" aria-labelledby="ending-title">
+        <p class="eyebrow">THE DREAM ENDS</p>
+        <h1 id="ending-title">Morning is waiting,<br><span id="ending-name">Hins</span>.</h1>
+        <div class="gold-rule" aria-hidden="true"></div>
+        <p class="ending-copy">Beyond the familiar streets of Luma Town, your journey is about to begin.</p>
+        <p class="ending-starter">Your first partner · <span id="starter-name"></span></p>
+        <button class="action" id="replay" type="button">Experience the dream again</button>
+      </section>
+    </div>
+    <section class="dialogue-ui hidden" id="dialogue-ui" aria-label="Conversation">
+      <div class="dialogue-panel" id="dialogue-panel">
+        <span class="dialogue-speaker" id="speaker">???</span>
+        <div class="dialogue-text" id="dialogue-text" aria-live="polite" aria-atomic="true"></div>
+        <div class="choices hidden" id="choices" aria-label="Your response"></div>
+        <div class="dialogue-bottom">
+          <span class="dialogue-hint" id="dialogue-hint">Listening…</span>
+          <span class="step-count" id="step-count" aria-label="Dialogue progress">01 / 12</span>
+          <button class="next-button hidden" id="next" type="button" aria-label="Continue dialogue">CONTINUE ◇</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script type="module">
+    import { launch } from "../../scripts/experience.js";
+    import { story } from "../../stories/hins.js";
+    launch(story);
+  </script>
+</body>
+</html>
