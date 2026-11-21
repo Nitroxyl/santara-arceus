@@ -10,14 +10,20 @@
   <link rel="stylesheet" href="../../styles/site.css">
 </head>
 <body>
-  <main class="experience">
+  <main class="experience" id="experience">
     <div class="stars" aria-hidden="true"></div>
+    <div class="sky-veil" aria-hidden="true"></div>
+    <div class="dream-curtain" aria-hidden="true"></div>
     <header class="hud">
       <span class="hud-brand">S A N T A R A</span>
-      <span class="hud-chapter" id="hud-chapter">AN INVITATION</span>
+      <div class="hud-right"><span class="hud-chapter" id="hud-chapter">AN INVITATION</span><nav class="hud-controls" id="hud-controls" aria-label="Dream controls"><button type="button" class="hud-button" id="memory-button" aria-haspopup="dialog">Revisit words</button><button type="button" class="hud-button" id="instant-button" aria-pressed="false">Instant text: off</button></nav></div>
     </header>
     <div class="stage" aria-hidden="true">
       <div class="aura"></div>
+      <div class="light-column"></div>
+      <div class="horizon-ring"></div>
+      <div class="celestial-ring ring-one"></div>
+      <div class="celestial-ring ring-two"></div>
       <div class="sacred">
         <div class="sacred-circle outer"></div>
         <div class="sacred-circle inner"></div>
@@ -57,6 +63,14 @@
       </div>
     </section>
   </main>
+  <dialog class="memory-dialog" id="memory-dialog" aria-labelledby="memory-heading">
+    <div class="memory-header">
+      <div><p class="eyebrow">THE WORDS THAT REMAIN</p><h2 id="memory-heading">A memory of this dream</h2></div>
+      <button type="button" class="memory-close" id="memory-close" aria-label="Close dialogue history">×</button>
+    </div>
+    <div class="memory-lines" id="memory-lines" aria-label="Previous dialogue"></div>
+    <p class="memory-help">Only the words you have encountered appear here.</p>
+  </dialog>
   <script type="module">
     import { launch } from "../../scripts/experience.js";
     import { story } from "../../stories/martyn.js";

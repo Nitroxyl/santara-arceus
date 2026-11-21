@@ -256,3 +256,92 @@ button:focus-visible { outline: 2px solid var(--gold); outline-offset: 5px; }
 @media(prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; }
 }
+
+/* Chapter two: celestial staging, cinematic entrance, and readable transcript. */
+.experience { --scene-glow: rgba(var(--accent-rgb), .14); }
+.experience[data-voice="mystery"] { --scene-glow: rgba(170,184,239,.08); }
+.experience[data-voice="arceus"] { --scene-glow: rgba(244,218,161,.26); }
+.experience[data-voice="narration"] { --scene-glow: rgba(175,197,241,.045); }
+.sky-veil {
+  position: absolute; z-index: 0; inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 70% 60% at 50% 47%, var(--scene-glow), transparent 72%);
+  transition: background 1s ease;
+}
+.dream-curtain { position: fixed; inset: 0; z-index: 20; pointer-events: none; opacity: 0; background: #f6edd3; }
+.experience.dream-entering .dream-curtain { animation: dream-enter 1650ms ease-out both; }
+@keyframes dream-enter {
+  0% { opacity: 0; background: #050915; }
+  18% { opacity: 1; background: #050915; }
+  37% { opacity: .94; background: #f6edd3; }
+  66% { opacity: .30; background: #f6edd3; }
+  100% { opacity: 0; background: #f6edd3; }
+}
+.experience .stage { transition: opacity 1s ease, filter 1s ease; }
+.experience:not(.started) .stage { opacity: .4; filter: blur(4px); }
+.experience.started .stage { opacity: 1; filter: none; }
+.experience[data-voice="arceus"] .sacred {
+  filter: drop-shadow(0 0 55px rgba(255,222,148,.47));
+}
+.light-column {
+  position: absolute;
+  width: min(18vw, 180px);
+  height: 105vh;
+  min-width: 85px;
+  background: linear-gradient(180deg, transparent, rgba(224,211,255,.08) 20%, rgba(246,233,205,.14) 60%, transparent);
+  filter: blur(25px);
+  transform: translateY(-5%);
+  opacity: .55;
+  animation: column-pulse 6s ease-in-out infinite alternate;
+}
+@keyframes column-pulse { from { opacity: .18; transform: translateY(-7%) scaleX(.8) } to { opacity: .6; transform: translateY(-7%) scaleX(1.15) } }
+.horizon-ring {
+  position: absolute; top: 72%; left: 50%; width: min(80vw, 820px); height: 100px;
+  transform: translateX(-50%) rotate(-2deg);
+  border: 1px solid rgba(245,226,176,.25); border-radius: 50%;
+  box-shadow: 0 0 55px rgba(238,216,160,.15), 0 0 110px rgba(238,216,160,.05);
+}
+.celestial-ring {
+  position: absolute; width: min(60vw, 620px); aspect-ratio: 1;
+  border: 1px solid rgba(231,207,161,.1); border-radius: 50%;
+  box-shadow: inset 0 0 55px rgba(231,207,161,.03);
+}
+.ring-one { transform: rotateX(73deg) rotate(-18deg); }
+.ring-two { transform: rotateY(67deg) rotate(22deg); border-color: rgba(var(--accent-rgb), .16); }
+.hud-right { display: flex; align-items: end; flex-direction: column; gap: 13px; }
+.hud-controls { display: none; flex-wrap: wrap; justify-content: end; gap: 7px; }
+.experience.started .hud-controls { display: flex; }
+.hud-button {
+  appearance: none; color: #d2d9e9; padding: 8px 10px;
+  font: 600 .61rem var(--sans); text-transform: uppercase; letter-spacing: .08em;
+  background: #101a31bb; border: 1px solid #bdccdf3b; cursor: pointer;
+}
+.hud-button:hover { background: #27344d; border-color: #d9c6a171; color: #fff; }
+.hud-button[aria-pressed="true"] { border-color: #e7cfa18a; color: #fbe6bd; }
+.memory-dialog {
+  width: min(700px, calc(100% - 32px)); max-height: min(80dvh, 740px);
+  padding: 0; color: #f3f1ec; border: 1px solid #e7cfa183;
+  background: linear-gradient(150deg, #17213b, #080f22 65%);
+  box-shadow: 0 25px 90px #000e;
+}
+.memory-dialog::backdrop { background: #020611c9; backdrop-filter: blur(9px); }
+.memory-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 15px; border-bottom: 1px solid #dfc59733; padding: 25px clamp(22px, 5vw, 34px) 20px; }
+.memory-header h2 { margin: 10px 0 0; font: normal clamp(1.45rem, 4vw, 2.1rem) var(--serif); color: #f5eddc; }
+.memory-close { flex: 0 0 auto; border: 1px solid #dbccac54; background: #ffffff0c; color: #e7d5b4; font: 1.5rem var(--sans); cursor: pointer; height: 40px; width: 40px; }
+.memory-lines { padding: 10px clamp(22px, 5vw, 34px); max-height: 50dvh; overflow: auto; }
+.memory-entry { padding: 19px 0; border-bottom: 1px solid #dee4f015; }
+.memory-entry:last-child { border-bottom: 0; }
+.memory-speaker { color: #d9c297; font: 700 .63rem var(--sans); letter-spacing: .18em; text-transform: uppercase; }
+.memory-text { margin: 10px 0 0; color: #e3e6ee; font: 1rem/1.7 var(--serif); }
+.memory-help { padding: 0 clamp(22px, 5vw, 34px) 17px; color: #9da9bc; font: .72rem var(--sans); }
+@media (max-width: 600px) {
+  .hud-right { max-width: 69%; gap: 7px; }
+  .hud-button { font-size: .55rem; padding: 7px; }
+  .light-column { height: 90vh; }
+  .horizon-ring { top: 68%; }
+  .memory-lines { max-height: 55dvh; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .experience.dream-entering .dream-curtain { animation: none; }
+  .experience .stage, .sky-veil { transition: none; }
+}

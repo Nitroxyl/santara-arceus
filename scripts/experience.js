@@ -28,6 +28,9 @@ export function launch(story) {
   let displayed = false;
   let frame = null;
   let currentCharacters = [];
+  const visited = new Set();
+  const history = [];
+  let instantText = false;
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function finishTyping() {
@@ -40,6 +43,10 @@ export function launch(story) {
 
   function showControls() {
     const step = scenes[index];
+    if (!visited.has(step)) {
+      visited.add(step);
+      history.push({ speaker: step.speaker, text: step.text });
+    }
     if (step.choices && !step.selected) {
       $("choices").replaceChildren();
       for (const choice of step.choices) {
@@ -75,6 +82,7 @@ export function launch(story) {
     $("choices").classList.add("hidden");
     $("next").classList.add("hidden");
     $("speaker").textContent = step.speaker;
+    $("experience").dataset.voice = step.speaker === "???" ? "mystery" : step.speaker === "THE DREAM" ? "narration" : "arceus";
     $("sigil-label").textContent = step.speaker === "???" ? "A VOICE" : step.speaker === "THE DREAM" ? "BEYOND SLEEP" : "ARCEUS";
     $("dialogue-text").classList.toggle("narration", step.speaker === "THE DREAM");
     $("dialogue-text").textContent = "";
@@ -82,7 +90,7 @@ export function launch(story) {
     $("step-count").textContent = String(index + 1).padStart(2, "0") + " / " + String(scenes.length).padStart(2,"0");
     currentCharacters = Array.from(step.text);
     writing = true;
-    if (reducedMotion) { finishTyping(); return; }
+    if (reducedMotion || instantText) { finishTyping(); return; }
     let started = null;
     const duration = Math.min(2350, Math.max(800, currentCharacters.length * 22));
     function tick(timestamp) {
@@ -109,6 +117,7 @@ export function launch(story) {
     $("dialogue-ui").classList.add("hidden");
     $("ending").classList.remove("hidden");
     $("hud-chapter").textContent = "THE MORNING AWAITS";
+    $("experience").dataset.voice = "narration";
     $("replay").focus({preventScroll:true});
   }
 
@@ -116,6 +125,8 @@ export function launch(story) {
     $("intro").classList.add("hidden");
     $("dialogue-ui").classList.remove("hidden");
     $("hud-chapter").textContent = "A DREAM BEYOND TIME";
+    $("experience").classList.add("started", "dream-entering");
+    $("experience").dataset.voice = "narration";
     displayed = true;
     render();
   });
@@ -130,5 +141,33 @@ export function launch(story) {
     event.preventDefault();
     advance();
   });
+  const memoryDialog = $("memory-dialog");
+  const memoryLines = $("memory-lines");
+  $("memory-button").addEventListener("click", () => {
+    if (writing) finishTyping();
+    memoryLines.replaceChildren();
+    for (const line of history) {
+      const entry = document.createElement("article");
+      entry.className = "memory-entry";
+      const name = document.createElement("span");
+      name.className = "memory-speaker";
+      name.textContent = line.speaker;
+      const text = document.createElement("p");
+      text.className = "memory-text";
+      text.textContent = line.text;
+      entry.append(name, text);
+      memoryLines.append(entry);
+    }
+    memoryDialog.showModal();
+  });
+  $("memory-close").addEventListener("click", () => memoryDialog.close());
+
+  $("instant-button").addEventListener("click", () => {
+    instantText = !instantText;
+    $("instant-button").setAttribute("aria-pressed", String(instantText));
+    $("instant-button").textContent = "Instant text: " + (instantText ? "on" : "off");
+    if (instantText && writing) finishTyping();
+  });
+
   $("replay").addEventListener("click", () => window.location.reload());
 }
