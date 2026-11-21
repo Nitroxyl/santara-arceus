@@ -22,7 +22,9 @@ export function launch(story) {
     { speaker: "ARCEUS", text: "What follows will belong to you. I will not write it in your place." },
     { speaker: "ARCEUS", text: "Now, awaken, " + story.name + "." }
   ];
-  let scenes = [...shared, ...story.scenes, ...closing];
+  // A player may supply a fully authored prologue and epilogue.
+  // If absent, the standard four-player introduction remains unchanged.
+  let scenes = [...(story.opening ?? shared), ...story.scenes, ...(story.closing ?? closing)];
   let index = 0;
   let writing = false;
   let displayed = false;
