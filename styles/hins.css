@@ -89,7 +89,7 @@
 .hins-prelude { margin:0 0 37px; color:#a5a3a2; font:500 .6rem "Cinzel",Georgia,serif; letter-spacing:.28em; }
 .hins-prelude span { padding:0 15px; color:#e4cd9b; }
 .hins-page .intro h1 { max-width:740px; margin:18px auto 6px; color:#fcf1d8; font:500 clamp(3.5rem,7vw,6.9rem)/.98 "Cormorant Garamond",Georgia,serif; letter-spacing:-.035em; text-shadow:0 0 46px #f9e6bd2f; text-wrap:balance; }
-.hins-intro-crest { margin:24px auto; width:72px; height:29px; display:grid; place-items:center; color:#ead7aa; font-size:1.25rem; }
+.hins-intro-crest { position:relative; margin:24px auto; width:72px; height:29px; display:grid; place-items:center; color:#ead7aa; font-size:1.25rem; }
 .hins-intro-crest::before,.hins-intro-crest::after { content:""; display:block; position:absolute; width:28px; height:1px; background:linear-gradient(90deg,transparent,#e6cda0); transform:translateX(-40px); }
 .hins-intro-crest::after { transform:translateX(40px) rotate(180deg); }
 .hins-page .intro-copy { max-width:485px; font:normal clamp(1.14rem,2vw,1.38rem)/1.6 "Cormorant Garamond",Georgia,serif; color:#cfd4e0; }
