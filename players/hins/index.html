@@ -7,11 +7,22 @@
   <meta name="robots" content="noindex, nofollow">
   <meta name="description" content="A personal encounter with Arceus.">
   <title>Hins · A Dream Beyond Time | Santara</title>
+  <meta name="theme-color" content="#080d19">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../styles/site.css">
+  <link rel="stylesheet" href="../../styles/hins.css">
 </head>
-<body>
-  <main class="experience" id="experience">
+<body class="hins-body">
+  <main class="experience hins-page" id="experience">
     <div class="stars" aria-hidden="true"></div>
+    <div class="hins-clouds" aria-hidden="true"></div>
+    <div class="hins-stars" id="hins-stars" aria-hidden="true"></div>
+    <div class="hins-grain" aria-hidden="true"></div>
+    <div class="hins-floor" aria-hidden="true"></div>
+    <div class="hins-side-rail" aria-hidden="true"><span>THE DREAM BETWEEN WORLDS</span><i></i><span>01 / HINS</span></div>
+    <div class="hins-ambient-verse" aria-hidden="true">The stars themselves are silent.</div>
     <div class="sky-veil" aria-hidden="true"></div>
     <div class="dream-curtain" aria-hidden="true"></div>
     <header class="hud">
@@ -19,6 +30,19 @@
       <div class="hud-right"><span class="hud-chapter" id="hud-chapter">AN INVITATION</span><nav class="hud-controls" id="hud-controls" aria-label="Dream controls"><button type="button" class="hud-button" id="memory-button" aria-haspopup="dialog">Revisit words</button><button type="button" class="hud-button" id="instant-button" aria-pressed="false">Instant text: off</button></nav></div>
     </header>
     <div class="stage" aria-hidden="true">
+      <div class="hins-portal-field">
+        <div class="hins-wings wings-one"></div>
+        <div class="hins-wings wings-two"></div>
+        <div class="hins-divine-disc"></div>
+        <div class="hins-rune-ring"></div>
+        <div class="hins-center-glow"></div>
+        <div class="hins-portal-spires"></div>
+      </div>
+      <div class="hins-reveal">
+        <div class="hins-gold-surge"></div>
+        <img class="hins-arceus-art" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png" alt="" width="475" height="475" decoding="async" fetchpriority="high">
+        <div class="hins-nameplate">ARCEUS <span>THE ORIGINAL ONE</span></div>
+      </div>
       <div class="aura"></div>
       <div class="light-column"></div>
       <div class="horizon-ring"></div>
@@ -34,19 +58,25 @@
     </div>
     <div class="vision-overlay" id="intro-wrap">
       <section class="intro" id="intro" aria-labelledby="intro-title">
+        <p class="hins-prelude">CHAPTER ZERO <span>✦</span> THE BEGINNING</p>
         <p class="eyebrow">A MESSAGE FOR <span id="player-name">Hins</span></p>
         <h1 id="intro-title">A dream beyond time</h1>
-        <span class="ornament" aria-hidden="true">✧</span>
+        <div class="hins-intro-crest" aria-hidden="true"><span>✧</span></div>
         <p class="intro-copy">There is a place between sleep and waking where even the stars fall silent. Tonight, something is waiting for you there.</p>
-        <button class="action" id="start" type="button">Enter the dream</button>
-        <p class="intro-note">Click the dialogue or press Space to continue</p>
+        <p class="hins-intro-aside">Do not be afraid of the silence.</p>
+        <button class="action" id="start" type="button">Enter the dream <span class="hins-action-arrow" aria-hidden="true">↗</span></button>
+        <p class="intro-note">USE HEADPHONES FOR IMMERSION <span aria-hidden="true">·</span> CLICK TO PROCEED</p>
       </section>
       <section class="ending hidden" id="ending" aria-labelledby="ending-title">
+        <p class="hins-prelude">THE FIRST STEP <span>✦</span> A NEW MORNING</p>
         <p class="eyebrow">THE DREAM ENDS</p>
         <h1 id="ending-title">Morning is waiting,<br><span id="ending-name">Hins</span>.</h1>
         <div class="gold-rule" aria-hidden="true"></div>
         <p class="ending-copy">Beyond the familiar streets of Luma Town, your journey is about to begin.</p>
-        <p class="ending-starter">Your first partner · <span id="starter-name"></span></p>
+        <div class="hins-partner-card">
+          <span class="hins-partner-image-frame"><img class="hins-riolu-art" loading="lazy" width="475" height="475" alt="Riolu official Pokémon artwork" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/447.png"></span>
+          <span class="hins-partner-details"><span class="hins-partner-kicker">A NEW COMPANION</span><span class="hins-partner-name" id="starter-name">Riolu</span><span class="hins-partner-caption">An encounter still to come.</span></span>
+        </div>
         <button class="action" id="replay" type="button">Experience the dream again</button>
       </section>
     </div>
@@ -71,6 +101,7 @@
     <div class="memory-lines" id="memory-lines" aria-label="Previous dialogue"></div>
     <p class="memory-help">Only the words you have encountered appear here.</p>
   </dialog>
+  <script src="../../scripts/hins-atmosphere.js" defer></script>
   <script type="module">
     import { launch } from "../../scripts/experience.js";
     import { story } from "../../stories/hins.js";

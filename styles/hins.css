@@ -1,0 +1,175 @@
+/* HINS / THE DREAM BETWEEN WORLDS
+   Bespoke first-player art direction, layered over the common dialogue engine.
+   Divine imagery remains visible without external images; Pokémon artwork is provided
+   by the public PokeAPI sprite library and rendered as an optional enhancement. */
+
+:root { --hins-gold:#f6e6b9; --hins-cold:#a9c9e3; --hins-ink:#080d19; }
+.hins-body { background:#050817; }
+.hins-body .experience {
+  --accent:#ead6a9;
+  --accent-rgb:234,214,169;
+  min-height:100dvh;
+  background:
+    radial-gradient(ellipse 42% 48% at 51% 46%,#3d365250 0,transparent 76%),
+    radial-gradient(ellipse 90% 60% at 50% 110%,#29416a54 0,transparent 72%),
+    radial-gradient(ellipse 70% 55% at 50% -10%,#1d26424c 0,transparent 75%),
+    #050817;
+}
+.hins-body .experience::after { background:radial-gradient(ellipse 45% 55% at 50% 40%,rgba(228,205,165,.07),transparent 74%); }
+.hins-body .stars { opacity:.7; transform:scale(1.1); }
+.hins-clouds,.hins-grain,.hins-floor,.hins-stars { position:absolute; inset:0; pointer-events:none; }
+.hins-clouds { z-index:0; opacity:.55; background:
+  radial-gradient(ellipse 30% 65% at 16% 52%,#425b8140,transparent),
+  radial-gradient(ellipse 25% 55% at 88% 57%,#765b7840,transparent),
+  radial-gradient(ellipse 58% 19% at 52% 74%,#c4c3ee15,transparent);
+  filter:blur(31px); animation:hins-haze 20s ease-in-out infinite alternate; }
+@keyframes hins-haze { from{transform:translateX(-3%) scale(1)} to{transform:translateX(3%) scale(1.12)} }
+.hins-grain { z-index:2; opacity:.15; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.20' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.hins-stars { z-index:1; overflow:hidden; }
+.hins-particle { position:absolute; width:var(--s); height:var(--s); left:var(--x); top:var(--y); border-radius:50%; background:#f7eacb; box-shadow:0 0 8px 2px #e4cfa55c; opacity:.2; animation:hins-twinkle var(--dur) ease-in-out var(--delay) infinite alternate; }
+@keyframes hins-twinkle { from{opacity:.08; transform:translateY(5px) scale(.8)} to{opacity:.82; transform:translateY(-14px) scale(1.2)} }
+.hins-floor { z-index:0; inset:auto -15% -30% -15%; height:60%; opacity:.38;
+  transform:perspective(550px) rotateX(69deg);
+  transform-origin:top center;
+  background-image:linear-gradient(90deg,transparent 49.84%,#e4d5bd25 50%,transparent 50.16%),
+  repeating-linear-gradient(90deg,transparent 0,transparent 84px,#e4d5bd25 85px,transparent 86px),
+  repeating-linear-gradient(0deg,transparent 0,transparent 84px,#e4d5bd20 85px,transparent 86px);
+  mask-image:linear-gradient(180deg,transparent,#000 35%,transparent 95%);
+}
+.hins-page .stage { z-index:2; transform:none; top:5%; bottom:13%; }
+.hins-page .sacred { z-index:3; opacity:.6; transform:scale(.68); transition:opacity 1.7s ease,filter 1.7s ease,transform 1.7s ease; }
+.hins-page .sacred-circle.outer { border-color:#f4d9a472; }
+.hins-page .hins-portal-field { position:absolute; inset:0; display:grid; place-items:center; transform:translateY(-3%); }
+.hins-divine-disc { position:absolute; width:min(59vmin,630px); height:min(59vmin,630px); min-width:300px; min-height:300px; border-radius:50%;
+  border:1px solid #e7cfa152;
+  background:radial-gradient(circle,#f4db9b13,transparent 55%);
+  box-shadow:0 0 100px #fae6c111, inset 0 0 90px #fbe4ab0a;
+  animation:hins-disc-breathe 8s ease-in-out infinite alternate; }
+@keyframes hins-disc-breathe { from{filter:brightness(.7); transform:scale(.95)} to{filter:brightness(1.3); transform:scale(1.035)} }
+.hins-divine-disc::before,.hins-divine-disc::after { content:""; position:absolute; inset:5%; border-radius:50%; border:1px dashed #dfc79733; animation:hins-rotate 50s linear infinite; }
+.hins-divine-disc::after { inset:14%; border-style:solid; border-color:#d7b57544; animation-direction:reverse; animation-duration:35s; }
+.hins-rune-ring { position:absolute; width:min(70vmin,740px); height:min(70vmin,740px); min-width:360px; min-height:360px; border:1px solid #c9bedb20; border-radius:50%;
+  background:repeating-conic-gradient(from 0deg,#d4c7a94a 0deg 1deg,transparent 1deg 14deg);
+  mask-image:radial-gradient(transparent 58%,#000 59%,#000 60%,transparent 60.6%);
+  animation:hins-rotate 85s linear infinite reverse; opacity:.7; }
+@keyframes hins-rotate { to{transform:rotate(360deg)} }
+.hins-wings { position:absolute; width:min(65vmin,640px); height:min(65vmin,640px); min-width:350px; min-height:350px; border:1px solid #f4dcae2e; border-radius:19%;
+  transform:rotate(45deg); filter:drop-shadow(0 0 30px #efdbb21e); }
+.wings-two { width:min(49vmin,510px); height:min(49vmin,510px); min-width:258px; min-height:258px; transform:rotate(0); border-radius:50% 14% 50% 14%; border-color:#d1d8f32b; }
+.hins-center-glow { position:absolute; width:min(54vmin,540px); aspect-ratio:1; border-radius:50%; background:radial-gradient(circle,#fff2bf2c 0, #f7dfb610 33%, transparent 67%); filter:blur(20px); opacity:.85; }
+.hins-portal-spires { position:absolute; width:1px; height:85%; background:linear-gradient(transparent,#e9d39b33,transparent); box-shadow:0 0 35px 13px #e9d39b0d; }
+.hins-portal-spires::before,.hins-portal-spires::after { content:""; position:absolute; left:-19vw; top:10%; width:1px; height:76%; background:linear-gradient(transparent,#bfd1e42c,transparent); }
+.hins-portal-spires::after { left:19vw; }
+.hins-reveal { position:absolute; inset:0; display:grid; place-items:center; pointer-events:none; z-index:4; transform:translateY(-1%); }
+.hins-gold-surge { position:absolute; width:min(76vmin,780px); height:min(76vmin,780px); border-radius:50%;
+  background:radial-gradient(circle,#ffefc832,#f7e6ae10 42%,transparent 70%);
+  filter:blur(15px); opacity:0; transition:opacity 2.2s ease; }
+.hins-arceus-art { position:relative; display:block; width:clamp(250px,47vmin,550px); height:auto; max-height:66%; object-fit:contain;
+  opacity:0; transform:translateY(25px) scale(.89); filter:brightness(2.1) blur(10px) drop-shadow(0 0 45px #f5e9bc80);
+  transition:opacity 1.8s ease,transform 2.7s cubic-bezier(.19,1,.22,1),filter 2.4s ease; }
+.hins-nameplate { position:absolute; top:78%; text-align:center; color:#f7edce; font:500 .85rem/1.4 "Cinzel",Georgia,serif; letter-spacing:.44em; opacity:0; transform:translateY(10px); transition:opacity 1.6s ease 1.15s, transform 1.6s ease 1.15s; text-shadow:0 0 22px #f6e2b8a8; }
+.hins-nameplate span { display:block; margin-top:8px; color:#d0bb92; font:500 .53rem "Cinzel",Georgia,serif; letter-spacing:.23em; }
+.hins-page[data-voice="arceus"] .hins-arceus-art { opacity:1; transform:translateY(-10px) scale(1); filter:brightness(1.12) blur(0) drop-shadow(0 0 35px #e7cfa159); }
+.hins-page[data-voice="arceus"] .hins-gold-surge { opacity:1; }
+.hins-page[data-voice="arceus"] .hins-nameplate { opacity:1; transform:translateY(0); }
+.hins-page[data-voice="arceus"] .sacred { opacity:.09; filter:blur(14px); transform:scale(.9); }
+.hins-page[data-voice="arceus"] .hins-divine-disc { box-shadow:0 0 80px #f4e5ba33,inset 0 0 90px #f8e6ab17; }
+.hins-page[data-voice="arceus"] .hins-center-glow { opacity:1; }
+.hins-page[data-voice="mystery"] .hins-center-glow { opacity:.14; }
+.hins-page[data-voice="narration"] .hins-center-glow { opacity:.45; }
+.hins-page .hud { inset:29px 44px auto; align-items:start; }
+.hins-page .hud-brand { font-family:"Cinzel",Georgia,serif; font-size:.84rem; letter-spacing:.36em; color:#f4e8cc; }
+.hins-page .hud-chapter { font-family:"Cinzel",Georgia,serif; letter-spacing:.14em; color:#d1c3a5; }
+.hins-side-rail { position:absolute; z-index:3; left:38px; top:50%; transform:translateY(-50%); color:#baa7809e; display:flex; align-items:center; gap:16px; writing-mode:vertical-rl; transform-origin:center; font:600 .56rem "Cinzel",Georgia,serif; letter-spacing:.2em; }
+.hins-side-rail i { display:block; height:75px; width:1px; background:linear-gradient(transparent,#dbc293,transparent); }
+.hins-ambient-verse { position:absolute; bottom:27px; right:39px; z-index:5; color:#c5bba77d; font:italic 1rem "Cormorant Garamond",Georgia,serif; letter-spacing:.035em; }
+.hins-page .vision-overlay { z-index:7; }
+.hins-page .intro { max-width:720px; background:radial-gradient(ellipse at 50% 60%,#090f20b0,transparent 76%); padding:30px; }
+.hins-page .intro .eyebrow { font-family:"Cinzel",Georgia,serif; font-size:.63rem; letter-spacing:.23em; color:#e3d4b0; }
+.hins-prelude { margin:0 0 37px; color:#a5a3a2; font:500 .6rem "Cinzel",Georgia,serif; letter-spacing:.28em; }
+.hins-prelude span { padding:0 15px; color:#e4cd9b; }
+.hins-page .intro h1 { max-width:740px; margin:18px auto 6px; color:#fcf1d8; font:500 clamp(3.5rem,7vw,6.9rem)/.98 "Cormorant Garamond",Georgia,serif; letter-spacing:-.035em; text-shadow:0 0 46px #f9e6bd2f; text-wrap:balance; }
+.hins-intro-crest { margin:24px auto; width:72px; height:29px; display:grid; place-items:center; color:#ead7aa; font-size:1.25rem; }
+.hins-intro-crest::before,.hins-intro-crest::after { content:""; display:block; position:absolute; width:28px; height:1px; background:linear-gradient(90deg,transparent,#e6cda0); transform:translateX(-40px); }
+.hins-intro-crest::after { transform:translateX(40px) rotate(180deg); }
+.hins-page .intro-copy { max-width:485px; font:normal clamp(1.14rem,2vw,1.38rem)/1.6 "Cormorant Garamond",Georgia,serif; color:#cfd4e0; }
+.hins-intro-aside { margin:15px 0 8px; color:#bfb5b0; font:italic 1rem "Cormorant Garamond",Georgia,serif; }
+.hins-page .action { position:relative; overflow:hidden; min-height:57px; padding:17px 27px; border:1px solid #ebd6a2b3;
+  background:linear-gradient(112deg,#e1cb9d1f,#2228398f); font:500 .67rem "Cinzel",Georgia,serif; letter-spacing:.2em; color:#fff4d5;
+  box-shadow:0 0 45px #debb6221; }
+.hins-page .action::before { content:""; position:absolute; inset:0; transform:translateX(-110%); background:linear-gradient(90deg,transparent,#f9efcf28,transparent); transition:transform .65s ease; }
+.hins-page .action:hover::before { transform:translateX(110%); }
+.hins-action-arrow { font:1.05rem Georgia,serif; margin-left:23px; }
+.hins-page .intro-note { margin-top:21px; font:.57rem "Cinzel",Georgia,serif; letter-spacing:.15em; color:#949bb0; }
+.hins-page .intro-note span { padding:0 8px; }
+.hins-page .dialogue-ui { z-index:11; bottom:clamp(30px,5.2vh,73px); width:min(850px,calc(100% - 76px)); }
+.hins-page .dialogue-panel { position:relative; min-height:205px; padding:29px 39px 24px;
+  background:linear-gradient(130deg,rgba(9,16,33,.96),rgba(22,29,48,.90) 55%,rgba(10,15,32,.96));
+  border:1px solid #d9c3966b; border-top:1px solid #f3dfaa9e;
+  box-shadow:0 0 0 5px #dfc89a07,0 18px 75px #000b,0 0 75px #eacb7d12,inset 0 1px #ffedbd1a; }
+.hins-page .dialogue-panel::before { content:"✦"; position:absolute; top:-11px; left:32px; width:23px; background:#0b1225; color:#e9d4a3; text-align:center; font-size:15px; }
+.hins-page .dialogue-panel::after { content:""; position:absolute; width:16px; height:16px; right:8px; top:8px; border-top:1px solid #e9d5a647; border-right:1px solid #e9d5a647; pointer-events:none; }
+.hins-page .dialogue-speaker { font:600 .64rem "Cinzel",Georgia,serif; color:#f8dfaa; letter-spacing:.22em; margin-bottom:12px; }
+.hins-page .dialogue-text { color:#f2eee7; font:normal clamp(1.22rem,2vw,1.48rem)/1.48 "Cormorant Garamond",Georgia,serif; min-height:79px; max-height:min(30dvh,235px); overflow:auto; }
+.hins-page .dialogue-text.narration { color:#c1cbe0; }
+.hins-page .dialogue-hint, .hins-page .step-count { font-size:.62rem; letter-spacing:.1em; }
+.hins-page .next-button { font-family:"Cinzel",Georgia,serif; font-size:.66rem; color:#f4d9a1; }
+.hins-page .choice { border-color:#e3c78d6b; background:#eee0bb0c; color:#f7f0e2; font-family:"Cormorant Garamond",Georgia,serif; font-size:1.24rem; padding:12px 17px; }
+.hins-page .choice:hover,.hins-page .choice:focus-visible { background:#f2e4be1c; border-color:#f7daa0; }
+.hins-page .ending { max-width:650px; margin:auto; padding:35px 50px; border:1px solid #e4cda52c; background:linear-gradient(135deg,#071022da,#1d2b43bf); box-shadow:0 0 90px #e2cb9d0c; }
+.hins-page .ending h1 { font:500 clamp(2.7rem,5.4vw,4.8rem)/1 "Cormorant Garamond",Georgia,serif; color:#fff1d7; }
+.hins-page .ending-copy { font:1.25rem/1.4 "Cormorant Garamond",Georgia,serif; }
+.hins-partner-card { display:flex; align-items:center; gap:19px; max-width:350px; margin:27px auto 0; padding:12px 20px 12px 8px; border:1px solid #e2cea43e; background:linear-gradient(100deg,#e2cea411,#e2cea402); text-align:left; }
+.hins-partner-image-frame { width:112px; height:105px; display:grid; place-items:center; flex:0 0 112px; background:radial-gradient(circle,#c7d7e738,transparent 70%); }
+.hins-riolu-art { width:110px; max-height:105px; object-fit:contain; filter:drop-shadow(0 7px 15px #0307149e); }
+.hins-partner-details { display:flex; flex-direction:column; gap:4px; }
+.hins-partner-kicker { font:600 .56rem "Cinzel",Georgia,serif; color:#d3c09b; letter-spacing:.16em; }
+.hins-partner-name { font:500 2rem "Cormorant Garamond",Georgia,serif; color:#f5e8cb; }
+.hins-partner-caption { color:#aeb8ce; font:italic .98rem "Cormorant Garamond",Georgia,serif; }
+@media(max-width:800px){
+  .hins-side-rail,.hins-ambient-verse { display:none; }
+  .hins-page .hud { inset:23px 22px auto; }
+  .hins-page .hud-brand { font-size:.68rem; }
+  .hins-page .intro { padding:24px 9px; }
+  .hins-page .dialogue-ui { width:calc(100% - 32px); }
+}
+@media(max-width:600px){
+  .hins-page .stage { top:4%; bottom:19%; }
+  .hins-divine-disc { width:76vw;height:76vw;min-width:0;min-height:0; }
+  .hins-rune-ring { width:91vw;height:91vw;min-width:0;min-height:0; }
+  .hins-wings { width:78vw;height:78vw;min-width:0;min-height:0; }
+  .wings-two { width:59vw;height:59vw;min-width:0;min-height:0; }
+  .hins-arceus-art { width:min(80vw,360px); max-height:50vh; }
+  .hins-nameplate { top:72%; font-size:.68rem; }
+  .hins-page .intro h1 { font-size:clamp(3.35rem,12vw,5.7rem); }
+  .hins-page .intro-copy { font-size:1.21rem; }
+  .hins-page .dialogue-ui { bottom:12px; width:calc(100% - 20px); }
+  .hins-page .dialogue-panel { padding:23px 22px 17px; min-height:195px; max-height:55dvh; overflow:auto; }
+  .hins-page .dialogue-text { font-size:1.23rem; line-height:1.45; max-height:25dvh; }
+  .hins-page .dialogue-speaker { font-size:.62rem; }
+  .hins-page .ending { padding:28px 17px; }
+  .hins-page .ending h1 { font-size:3rem; }
+  .hins-partner-image-frame { flex-basis:82px;width:82px;height:90px; }
+  .hins-riolu-art { width:88px; }
+  .hins-partner-card { gap:10px; }
+}
+@media(max-height:740px) {
+  .hins-page .stage { top:0;bottom:20%; }
+  .hins-arceus-art { width:min(45vh,360px); }
+  .hins-page .dialogue-panel { min-height:165px; }
+  .hins-page .dialogue-ui { bottom:11px; }
+  .hins-nameplate { top:78%; }
+}
+@media(max-width:650px) and (max-height:700px) {
+  .hins-page .stage { top:-7%;bottom:26%; }
+  .hins-arceus-art { width: min(45vh,280px); }
+  .hins-page .intro { padding:9px; }
+  .hins-page .intro h1 { font-size:3rem; }
+  .hins-prelude { margin-bottom:10px; }
+  .hins-intro-crest { margin:11px auto; }
+  .hins-page .intro .action { margin-top:13px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .hins-clouds,.hins-particle,.hins-divine-disc,.hins-rune-ring,.hins-page .sacred { animation:none !important; }
+  .hins-arceus-art,.hins-gold-surge,.hins-nameplate { transition:none !important; }
+}
