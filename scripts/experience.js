@@ -12,18 +12,20 @@ export function launch(story) {
   $("ending-name").textContent = story.name;
 
   const shared = [
-    { speaker: "THE DREAM", text: "The familiar streets of Luma Town dissolve into silence. There is no horizon here, only a sky that stretches in every direction." },
+    { speaker: "THE DREAM", text: "You fall asleep beneath the familiar skies of Luma Town. Then the walls and ceiling are gone. In their place is a boundless sky, filled with stars that do not move." },
     { speaker: "???", text: story.name + "." },
-    { speaker: "???", text: "Be at ease. You have not been taken from your world. This is only a moment between one heartbeat and the next." },
-    { speaker: "ARCEUS", text: "I have watched countless journeys begin. Not all of them require a prophecy. Some begin quite simply, with the courage to greet a new morning." }
+    { speaker: "???", text: "Be at peace. You have not left your home. I have invited only your dreaming mind into this place between moments." },
+    { speaker: "THE DREAM", text: "A ring of golden light turns in the distance. Within it, a radiant figure emerges, a presence you know from the oldest stories of your world." },
+    { speaker: "ARCEUS", text: "I am Arceus. Before this land had a name, before the first dawn broke across its seas, I was. Tonight, I have come to speak with you." },
+    { speaker: "ARCEUS", text: "Do not be afraid. I have no command to place upon you. There is simply something you must be given the freedom to hear." }
   ];
   const closing = [
-    { speaker: "ARCEUS", text: "When morning comes, seek the laboratory in Luma Town. There is someone waiting to meet you, and familiar faces who will walk the road beside you." },
-    { speaker: "ARCEUS", text: "What follows will belong to you. I will not write it in your place." },
-    { speaker: "ARCEUS", text: "Now, awaken, " + story.name + "." }
+    { speaker: "ARCEUS", text: "When morning comes, take your partner and go to Professor Meranti's laboratory in Luma Town. You will find familiar faces there. You have walked beside them before; today you will begin a different road together." },
+    { speaker: "ARCEUS", text: "Whatever follows will belong to you. I will not write it in your place." },
+    { speaker: "ARCEUS", text: "Go forth, then. The world is yours to discover, and tomorrow is yours to shape. Awaken, " + story.name + "." }
   ];
   // A player may supply a fully authored prologue and epilogue.
-  // If absent, the standard four-player introduction remains unchanged.
+  // All default prologues acknowledge that the players already have their Pokémon.
   let scenes = [...(story.opening ?? shared), ...story.scenes, ...(story.closing ?? closing)];
   let index = 0;
   let writing = false;

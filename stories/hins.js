@@ -4,13 +4,13 @@
 export const story = {
   name: "Hins",
   starter: "Riolu",
-  introTitle: "A dream beyond time",
+  introTitle: "The First Audience",
   accent: "#a5d6ff",
   accentRgb: "165, 214, 255",
   opening: [
     {
       speaker: "THE DREAM",
-      text: "It begins like any other night in Luma Town. Beyond your window, the last voices of the evening fade, and the familiar world settles into sleep."
+      text: "It begins like any other night in Luma Town. The last voices of the evening fade, and your Riolu is close by. Beyond the window, the streets you have known for years settle into sleep."
     },
     {
       speaker: "THE DREAM",
@@ -26,7 +26,7 @@ export const story = {
     },
     {
       speaker: "???",
-      text: "You are safe. Your body rests where you left it. It is only your awareness that has been permitted to wander here."
+      text: "Be at peace, Hins. You have not been taken from your home, nor has anything happened to your Riolu. I have called only your dreaming mind to this place."
     },
     {
       speaker: "???",
@@ -38,25 +38,25 @@ export const story = {
     },
     {
       speaker: "ARCEUS",
-      text: "You know me by the name Arceus."
+      text: "I am Arceus. Before the first sea had a shore, before the mountains rose, before your world had a name to speak aloud, I was. Some call me the Original One. Tonight, you may simply call me Arceus."
     },
     {
       speaker: "ARCEUS",
-      text: "I have witnessed the birth of stars and the passing of ages, child. But do not believe that such small moments escape my notice."
+      text: "I have watched stars kindle and ages pass, yet I have also watched a boy grow up among his friends in a small town called Luma. Do not suppose the quiet lives of my creation escape my notice."
     }
   ],
   scenes: [
     {
       speaker: "ARCEUS",
-      text: "I remember the day you first met those whom you now call your friends. None of you knew how much of your lives you would come to share."
+      text: "You have known one another for many years now. There were days you disagreed, days you laughed until the hours vanished, and days when you simply went home together. Through them all, you have continued to find your way back to one another."
     },
     {
       speaker: "ARCEUS",
-      text: "The journeys home. The laughter over things that seemed so important then. The ordinary afternoons that passed without ceremony, and became precious only afterward."
+      text: "There is a strength in those years that does not announce itself. You have had your moments of resolve, Hins, and your moments of simply enjoying the company of those beside you. Both are part of the person I see before me."
     },
     {
       speaker: "ARCEUS",
-      text: "I remember them all. Not because your lives have been without difficulty, nor because any one of you stands above the rest. I remember because they are yours."
+      text: "I have not gathered you because you are without flaws, nor because I have measured you above all others. The lives you have lived are not an examination you were unknowingly taking."
     },
     {
       speaker: "ARCEUS",
@@ -68,15 +68,15 @@ export const story = {
       ,choices: [
         {
           label: "Why have you called me here?",
-          response: "Because there are days approaching that even I cannot speak of with certainty. I have seen what might come to pass, but the future has not yet become a thing that can be held."
+          response: "Because I have seen possibilities gathering around your home, and in some of them your choices—and the choices of your friends—make a difference. I call you to hear of what may be, not to swear obedience to what must be."
         },
         {
           label: "Have you spoken to my friends?",
-          response: "Your friends are not beyond my sight, Hins. Their roads and yours have crossed for years. It is no accident that, when the time comes, they will cross again."
+          response: "I have called to each of them in turn. Your lives have been entwined for years, long before this night. What you choose together may matter more than any road I could place before one of you alone."
         },
         {
           label: "Am I really speaking to Arceus?",
-          response: "You are. Yet you need not accept every word merely because it comes from me. Take what you hear tonight into the waking world, and judge it by what follows."
+          response: "You are, Hins. You may doubt your senses if you wish. They were not made for a place like this. The waking world will still be there when you return, and your own judgment will remain your own."
         }
       ]
     },
@@ -86,11 +86,11 @@ export const story = {
     },
     {
       speaker: "ARCEUS",
-      text: "There is something beneath Santara's familiar skies that has begun to stir. It is old, and its awakening touches more possibilities than one life could ever contain."
+      text: "There is something stirring beneath Santara's familiar skies. It is older than the roads you walk, and those who would master it believe they can shelter the world from what they fear."
     },
     {
       speaker: "ARCEUS",
-      text: "I have seen futures in which the seasons turn as they always have. I have seen others in which the world falls terribly, unnaturally still."
+      text: "I have seen one future in which the seasons turn, the streets remain full of voices, and your friends grow old together. I have seen others in which the world falls terribly, unnaturally still."
     },
     {
       speaker: "ARCEUS",
@@ -98,7 +98,7 @@ export const story = {
     },
     {
       speaker: "ARCEUS",
-      text: "That is why I speak to you, and why I speak of your companions. There may come a day when the choices made together matter more than any power held alone."
+      text: "That is why I speak with you tonight. Not because you are destined to defeat a great evil, but because you and your companions may stand at a crossroads where the choice is still yours to make."
     },
     {
       speaker: "ARCEUS",
@@ -106,15 +106,15 @@ export const story = {
     },
     {
       speaker: "ARCEUS",
-      text: "There is a Riolu you have yet to meet. It, too, has a life of its own, and a future that has not been written."
+      text: "Your Riolu has already begun that journey beside you. Long before this dream, you learned the shape of one another's ordinary days, and something of what it means to trust."
     },
     {
       speaker: "ARCEUS",
-      text: "Its trust will not be mine to grant you. Nor will any bond you form with it be mine to command. Those things must belong to the two of you."
+      text: "The bond between you is not a gift I placed in your hands. It is something the two of you have made. As your paths grow longer, do not overlook the worth of what already stands beside you."
     },
     {
       speaker: "ARCEUS",
-      text: "And there are others waiting for a beginning of their own. You will recognise the familiar voices long before you recognise the road ahead."
+      text: "And when you find your friends again tomorrow, remember that you are not meeting them for the first time. You are carrying years of shared life into a journey none of you has taken before."
     },
     {
       speaker: "ARCEUS",
@@ -126,7 +126,7 @@ export const story = {
         },
         {
           label: "What am I supposed to do?",
-          response: "For now? Wake. Meet your friends. Take your first step. There is a time for the answers you seek, but it is not this hour."
+          response: "For now? Wake. Bring Riolu with you, and meet your friends at Professor Meranti's laboratory. Let the morning be a morning. There will be time enough for harder answers."
         },
         {
           label: "Can I refuse whatever is coming?",
@@ -142,11 +142,11 @@ export const story = {
   closing: [
     {
       speaker: "ARCEUS",
-      text: "When morning comes, go to the laboratory in Luma Town. You will find someone expecting you—and, I suspect, several familiar faces before the day is through."
+      text: "When morning comes, take Riolu with you to Professor Meranti's laboratory in Luma Town. Your friends have an invitation of their own, and I suspect they will be no less curious about tonight than you are."
     },
     {
       speaker: "ARCEUS",
-      text: "I shall not tell you where the road ends. That is the one gift I will not take from you."
+      text: "Go forth, then. The world is yours to discover, and tomorrow is yours to shape. I shall not tell you where the road ends; that is one gift I will not take from you."
     },
     {
       speaker: "THE DREAM",
