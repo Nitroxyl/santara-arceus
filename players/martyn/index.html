@@ -7,11 +7,21 @@
   <meta name="robots" content="noindex, nofollow">
   <meta name="description" content="A personal encounter with Arceus.">
   <title>Martyn · A Dream Beyond Time | Santara</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../styles/site.css">
+  <link rel="stylesheet" href="../../styles/martyn.css">
 </head>
-<body>
-  <main class="experience" id="experience">
+<body class="mt-body">
+  <main class="experience mt-page" id="experience">
     <div class="stars" aria-hidden="true"></div>
+    <div class="mt-nebula" aria-hidden="true"></div>
+    <div class="mt-drifting-field" id="mt-drifting-field" aria-hidden="true"></div>
+    <div class="mt-framed-field" id="mt-framed-field" aria-hidden="true"></div>
+    <div class="mt-wandering-lines" aria-hidden="true"></div>
+    <div class="mt-celestial-floor" aria-hidden="true"></div>
+    <div class="mt-side-note" aria-hidden="true"><span>III · A WORLD STILL BECOMING</span><i></i><span>THE BEGINNING OF ALL THINGS</span></div>
     <div class="sky-veil" aria-hidden="true"></div>
     <div class="dream-curtain" aria-hidden="true"></div>
     <header class="hud">
@@ -19,6 +29,18 @@
       <div class="hud-right"><span class="hud-chapter" id="hud-chapter">AN INVITATION</span><nav class="hud-controls" id="hud-controls" aria-label="Dream controls"><button type="button" class="hud-button" id="memory-button" aria-haspopup="dialog">Revisit words</button><button type="button" class="hud-button" id="instant-button" aria-pressed="false">Instant text: off</button></nav></div>
     </header>
     <div class="stage" aria-hidden="true">
+      <div class="mt-chamber">
+        <div class="mt-ring mt-ring-outer"></div>
+        <div class="mt-ring mt-ring-inner"></div>
+        <div class="mt-spindle"></div>
+        <div class="mt-dawn"></div>
+        <div class="mt-horizon"></div>
+      </div>
+      <div class="mt-divine-reveal">
+        <div class="mt-divine-glow"></div>
+        <img class="mt-arceus-art" width="475" height="475" decoding="async" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png">
+        <div class="mt-nameplate">ARCEUS <small>THE ORIGINAL ONE</small></div>
+      </div>
       <div class="aura"></div>
       <div class="light-column"></div>
       <div class="horizon-ring"></div>
@@ -34,19 +56,25 @@
     </div>
     <div class="vision-overlay" id="intro-wrap">
       <section class="intro" id="intro" aria-labelledby="intro-title">
+        <p class="mt-chapter-line">CHAPTER ZERO <span>✧</span> AN AUDIENCE BEYOND TIME</p>
         <p class="eyebrow">A MESSAGE FOR <span id="player-name">Martyn</span></p>
         <h1 id="intro-title">A dream beyond time</h1>
-        <span class="ornament" aria-hidden="true">✧</span>
-        <p class="intro-copy">There is a place between sleep and waking where even the stars fall silent. Tonight, something is waiting for you there.</p>
-        <button class="action" id="start" type="button">Enter the dream</button>
+        <div class="mt-ornament" aria-hidden="true"><span>✧</span></div>
+        <p class="intro-copy">Beyond the reach of waking hours, a thousand lives follow a thousand paths. Tonight, one of those paths has brought you here.</p>
+        <p class="mt-intro-note">No road is written until it is walked.</p>
+        <button class="action" id="start" type="button">Enter the dream <span class="mt-action-arrow" aria-hidden="true">↗</span></button>
         <p class="intro-note">Click the dialogue or press Space to continue</p>
       </section>
       <section class="ending hidden" id="ending" aria-labelledby="ending-title">
+        <p class="mt-chapter-line">CHAPTER ZERO <span>✧</span> THE FIRST MORNING</p>
         <p class="eyebrow">THE DREAM ENDS</p>
         <h1 id="ending-title">Morning is waiting,<br><span id="ending-name">Martyn</span>.</h1>
         <div class="gold-rule" aria-hidden="true"></div>
-        <p class="ending-copy">Beyond the familiar streets of Luma Town, your journey is about to begin.</p>
-        <p class="ending-starter">Your partner · <span id="starter-name"></span></p>
+        <p class="ending-copy">The familiar streets of Luma Town await you, your Froakie, and the friends whose paths you have chosen to share.</p>
+        <div class="mt-partner-card">
+          <div class="mt-partner-art"><img width="475" height="475" loading="lazy" decoding="async" alt="Froakie official Pokémon artwork" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/656.png"></div>
+          <div class="mt-partner-copy"><span class="mt-partner-kicker">THE COMPANION YOU ALREADY KNOW</span><strong id="starter-name">Froakie</strong><span>By your side, whatever you decide.</span></div>
+        </div>
         <button class="action" id="replay" type="button">Experience the dream again</button>
       </section>
     </div>
@@ -71,6 +99,7 @@
     <div class="memory-lines" id="memory-lines" aria-label="Previous dialogue"></div>
     <p class="memory-help">Only the words you have encountered appear here.</p>
   </dialog>
+  <script defer src="../../scripts/martyn-atmosphere.js"></script>
   <script type="module">
     import { launch } from "../../scripts/experience.js";
     import { story } from "../../stories/martyn.js";

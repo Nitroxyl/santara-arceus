@@ -1,0 +1,196 @@
+/* MARTYN · A WORLD STILL BECOMING
+   Theme: self-directed motes against a beautiful, restrictive golden order.
+   Martyn's world is lilac, starlight blue, and dawn gold. */
+:root { --mt-lilac:#e9d4ff; --mt-rose:#e8cfe8; --mt-gold:#efdcad; }
+.mt-body {background:#080a1a;}
+.mt-page {
+  min-height:100dvh;
+  --accent:#e2c8f1; --accent-rgb:226,200,241;
+  background:
+    radial-gradient(ellipse 53% 56% at 49% 42%,#51395e70 0,transparent 75%),
+    radial-gradient(ellipse 45% 45% at 14% 32%,#162f5666 0,transparent 85%),
+    radial-gradient(ellipse 60% 40% at 82% 85%,#6f4b6950 0,transparent 87%),
+    linear-gradient(150deg,#080b20,#100e29 55%,#080e20);
+}
+.mt-page .stars {opacity:.4;}
+.mt-nebula,.mt-wandering-lines,.mt-celestial-floor,.mt-drifting-field,.mt-framed-field {
+  position:absolute; inset:0; pointer-events:none;
+}
+.mt-nebula {z-index:0; background:
+  radial-gradient(ellipse 22% 41% at 18% 52%,#8e779748,transparent),
+  radial-gradient(ellipse 30% 39% at 84% 37%,#6c8fbd30,transparent),
+  radial-gradient(ellipse 24% 30% at 48% 73%,#e4afc51b,transparent);
+  filter:blur(33px);
+  animation:mt-nebula-drift 18s ease-in-out infinite alternate;
+}
+@keyframes mt-nebula-drift {from{transform:translate(-1%,-1%) scale(.96)} to{transform:translate(2%,2%) scale(1.07)}}
+.mt-wandering-lines {z-index:1; opacity:.15; background:
+  radial-gradient(ellipse 36% 22% at 50% 52%,transparent 75%,#d8c2ff80 75.2%,transparent 75.6%),
+  radial-gradient(ellipse 44% 28% at 49% 50%,transparent 74%,#e2d4c680 74.2%,transparent 74.8%);
+  transform:rotate(-13deg);transition:opacity 1.2s ease;
+}
+.mt-celestial-floor {inset:auto -20% -32% -20%;height:66%;z-index:0;
+  transform:perspective(500px) rotateX(72deg);transform-origin:top;
+  background-image:repeating-linear-gradient(90deg,transparent 0 74px,#d5c5e71c 75px,transparent 76px),
+   repeating-linear-gradient(0deg,transparent 0 74px,#d5c5e71a 75px,transparent 76px);
+  mask-image:linear-gradient(180deg,transparent,#000 38%,transparent 93%);
+}
+.mt-drifting-field,.mt-framed-field {z-index:1; overflow:hidden;transition:opacity 1.45s ease,filter 1.45s ease;}
+.mt-drifting-field {opacity:.9;}
+.mt-framed-field {opacity:0;}
+.mt-mote {position:absolute;left:var(--x);top:var(--y);width:var(--size);height:var(--size);
+ border-radius:50%;background:var(--shade);
+ box-shadow:0 0 12px 3px var(--glow);
+ animation:mt-mote-drift var(--speed) ease-in-out var(--delay) infinite alternate;
+}
+.mt-mote::before {content:"";position:absolute;inset:-7px;border:1px solid var(--ring);border-radius:50%;opacity:.28;}
+@keyframes mt-mote-drift {
+  0%{transform:translate(-19px,16px) scale(.83);opacity:.42;}
+  55%{transform:translate(9px,-20px) scale(1.16);opacity:1;}
+  100%{transform:translate(29px,10px) scale(.9);opacity:.66;}
+}
+.mt-captive {position:absolute;left:var(--x);top:var(--y);width:6px;height:6px;border-radius:50%;
+ background:#fff3d3;box-shadow:0 0 12px 4px #edd89b7d,0 0 28px #fae9b060;}
+.mt-captive::before {content:"";position:absolute;left:-23px;top:-23px;width:50px;height:50px;
+ border:1px solid #f5d99ab3;border-radius:50%;box-shadow:0 0 10px #e2c78848;}
+.mt-captive::after {content:"";position:absolute;left:-35px;top:2px;width:76px;height:1px;
+ background:linear-gradient(90deg,transparent,#f6ddaa70,transparent);}
+.mt-page[data-scene="bound"] .mt-drifting-field {opacity:.05;filter:blur(12px);}
+.mt-page[data-scene="bound"] .mt-framed-field {opacity:.93;}
+.mt-page[data-scene="bound"] .mt-wandering-lines {opacity:.02;}
+.mt-page[data-scene="bound"] .mt-nebula {opacity:.20;filter:blur(40px) saturate(.25);}
+.mt-page[data-scene="bound"] .mt-chamber {filter:saturate(.45);opacity:.74;}
+.mt-page[data-scene="bound"] .mt-ring-outer {animation-play-state:paused;border-color:#f2d99bc9;}
+.mt-page[data-scene="freed"] .mt-drifting-field,
+.mt-page[data-scene="living"] .mt-drifting-field {opacity:1;filter:brightness(1.3);}
+.mt-page[data-scene="freed"] .mt-framed-field {opacity:0;}
+.mt-page[data-scene="freed"] .mt-wandering-lines {opacity:.40;}
+.mt-page .stage {z-index:2;transform:translateY(-8%);}
+.mt-chamber {position:absolute;inset:0;display:grid;place-items:center;transition:filter 1.5s ease,opacity 1.5s ease;}
+.mt-ring {position:absolute;border-radius:50%;border:1px solid #eddbb45c;box-shadow:0 0 60px #e8d0bd1a,inset 0 0 65px #ead0aa0f;}
+.mt-ring-outer {width:min(70vmin,670px);aspect-ratio:1;animation:mt-ring-turn 60s linear infinite;
+  background:radial-gradient(circle,#ebccdf1b,transparent 64%);}
+.mt-ring-outer::before {content:"";position:absolute;inset:7%;border:1px dashed #f4e2ce57;border-radius:50%;}
+.mt-ring-inner {width:min(47vmin,455px);aspect-ratio:1;border-color:#d9c4eb78;transform:rotate(45deg);border-radius:26%;}
+.mt-spindle {position:absolute;width:min(82vmin,780px);aspect-ratio:1;
+ background:repeating-conic-gradient(#e9dfbb3b 0 1deg,transparent 1deg 18deg);
+ mask-image:radial-gradient(circle,transparent 60%,#000 61%,#000 61.6%,transparent 62%);
+ animation:mt-ring-turn 110s linear infinite reverse;}
+.mt-dawn {position:absolute;width:min(53vmin,540px);aspect-ratio:1;border-radius:50%;
+ background:radial-gradient(circle,#ead1dc39,#e1ccf011 43%,transparent 69%);
+ filter:blur(20px);animation:mt-nebula-drift 8s ease-in-out infinite alternate;}
+.mt-horizon {position:absolute;width:min(78vw,850px);height:100px;top:72%;left:50%;
+ transform:translateX(-50%) rotate(-4deg);border:1px solid #dec8bf36;border-radius:50%;
+ box-shadow:0 0 45px #dcbda321;}
+@keyframes mt-ring-turn {to{transform:rotate(360deg)}}
+.mt-page .stage .sacred {z-index:4;opacity:.58;transform:scale(.7);transition:opacity 1.5s ease,filter 1.5s ease;}
+.mt-divine-reveal {position:absolute;inset:0;z-index:5;display:grid;place-items:center;pointer-events:none;}
+.mt-divine-glow {position:absolute;width:min(71vmin,720px);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,#ffedc641,#eee0d019 44%,transparent 68%);
+  opacity:0;filter:blur(20px);transition:opacity 1.8s ease;}
+.mt-arceus-art {width:clamp(235px,46vmin,540px);height:auto;max-height:64%;object-fit:contain;
+ opacity:0;transform:translateY(22px) scale(.9);
+ filter:brightness(2.1) blur(11px) drop-shadow(0 0 36px #efd4b677);
+ transition:opacity 1.8s ease,transform 2.5s ease,filter 2s ease;}
+.mt-nameplate {position:absolute;top:77%;font:500 .84rem "Cinzel",Georgia,serif;letter-spacing:.42em;
+ color:#fff0d5;text-align:center;text-shadow:0 0 20px #e9d8b8a3;
+ opacity:0;transform:translateY(8px);transition:opacity 1.5s ease 1s,transform 1.5s ease 1s;}
+.mt-nameplate small {display:block;margin-top:8px;font-size:.54rem;letter-spacing:.24em;color:#d1c2af;}
+.mt-page[data-voice="arceus"] .mt-arceus-art {opacity:1;transform:translateY(-7px) scale(1);
+ filter:brightness(1.1) blur(0) drop-shadow(0 0 35px #ebddb971);}
+.mt-page[data-voice="arceus"] .mt-divine-glow,.mt-page[data-voice="arceus"] .mt-nameplate {opacity:1;transform:translateY(0);}
+.mt-page[data-voice="arceus"] .sacred {opacity:.065;filter:blur(14px);}
+.mt-page[data-scene="reveal"] .mt-divine-glow {opacity:.8;}
+.mt-page .hud {inset:29px 42px auto;align-items:flex-start;}
+.mt-page .hud-brand {font:500 .79rem "Cinzel",Georgia,serif;letter-spacing:.35em;color:#eee3d2;}
+.mt-page .hud-chapter {font:500 .6rem "Cinzel",Georgia,serif;letter-spacing:.16em;color:#d4bdba;}
+.mt-side-note {position:absolute;left:35px;top:50%;z-index:3;transform:translateY(-50%);
+ writing-mode:vertical-rl;display:flex;align-items:center;gap:17px;color:#d1bfce96;
+ font:500 .52rem "Cinzel",Georgia,serif;letter-spacing:.2em;}
+.mt-side-note i {height:82px;width:1px;background:linear-gradient(transparent,#e7cbbe,transparent);}
+.mt-page .vision-overlay {z-index:7;}
+.mt-page .intro {padding:32px 26px;max-width:780px;
+ background:radial-gradient(ellipse at 50% 57%,#100f22b9,transparent 77%);}
+.mt-chapter-line {margin:0 0 32px;color:#c4bdcd;font:500 .61rem "Cinzel",Georgia,serif;letter-spacing:.21em;}
+.mt-chapter-line span {padding:0 13px;color:#e9d3ad;}
+.mt-page .eyebrow {color:#ead8b9;font:500 .65rem "Cinzel",Georgia,serif;letter-spacing:.23em;}
+.mt-page .intro h1,.mt-page .ending h1 {
+  margin:18px auto 9px;max-width:760px;color:#f6e9e1;text-wrap:balance;
+  font:500 clamp(3.5rem,7vw,6.7rem)/.99 "Cormorant Garamond",Georgia,serif;
+  letter-spacing:-.035em;text-shadow:0 0 40px #efcee733;}
+.mt-ornament {margin:19px auto 22px;color:#efd7bd;font:1.4rem Georgia,serif;}
+.mt-page .intro-copy {max-width:490px;color:#e0d5e5;font:normal clamp(1.19rem,2.1vw,1.45rem)/1.57 "Cormorant Garamond",Georgia,serif;}
+.mt-intro-note {margin:18px 0 3px;color:#c0b8cf;font:italic 1.06rem "Cormorant Garamond",Georgia,serif;}
+.mt-page .action {min-height:58px;padding:15px 28px;border:1px solid #ebd6b19f;
+ color:#f6e8d4;background:linear-gradient(115deg,#e4cad023,#22213ba8);
+ box-shadow:0 0 45px #e6c8d319;font:500 .69rem "Cinzel",Georgia,serif;letter-spacing:.15em;}
+.mt-page .action:hover {background:linear-gradient(115deg,#ead5d13d,#37334cc5);}
+.mt-action-arrow {margin-left:19px;font:1.05rem Georgia,serif;}
+.mt-page .intro-note {color:#ad9fb5;font:500 .58rem "Cinzel",Georgia,serif;letter-spacing:.13em;margin-top:24px;}
+.mt-page .dialogue-ui {z-index:11;bottom:clamp(21px,5.4vh,72px);width:min(875px,calc(100% - 76px));}
+.mt-page .dialogue-panel {min-height:210px;padding:29px 38px 22px;position:relative;
+ background:linear-gradient(120deg,rgba(12,14,31,.96),rgba(27,26,46,.92) 54%,rgba(10,15,31,.96));
+ border:1px solid #e6ceb56b;border-top:1px solid #f5dfc5a8;
+ box-shadow:0 0 0 5px #ead7b009,0 22px 85px #000b,inset 0 1px #f1ddc11a;}
+.mt-page .dialogue-panel::before {content:"✧";position:absolute;top:-12px;left:30px;background:#15152c;
+ color:#e8d6ba;font-size:20px;padding:0 7px;}
+.mt-page .dialogue-speaker {font:600 .63rem "Cinzel",Georgia,serif;letter-spacing:.2em;color:#ecd6b2;margin-bottom:12px;}
+.mt-page .dialogue-text {font:normal clamp(1.22rem,2vw,1.48rem)/1.46 "Cormorant Garamond",Georgia,serif;
+  color:#f0eaf1;min-height:78px;max-height:min(31dvh,225px);overflow:auto;}
+.mt-page .dialogue-text.narration {color:#d1c6e9;}
+.mt-page .choice {padding:13px 17px;border:1px solid #d9bdcf79;
+ color:#f8ebf6;background:#e5cbe212;font:normal 1.22rem "Cormorant Garamond",Georgia,serif;}
+.mt-page .choice:hover,.mt-page .choice:focus-visible {border-color:#ecd4c0;background:#f4e0d526;}
+.mt-page .next-button {font:500 .66rem "Cinzel",Georgia,serif;color:#eedbb7;}
+.mt-page .dialogue-hint,.mt-page .step-count {font-size:.63rem;letter-spacing:.07em;}
+.mt-page .ending {max-width:680px;padding:34px 46px;border:1px solid #e8caba3b;
+ background:linear-gradient(130deg,#101329ea,#252743e3);box-shadow:0 0 88px #efcddd19;}
+.mt-page .ending h1 {font-size:clamp(2.9rem,5.5vw,4.9rem);}
+.mt-page .ending-copy {font:normal 1.22rem/1.5 "Cormorant Garamond",Georgia,serif;color:#d7cde1;}
+.mt-partner-card {display:flex;align-items:center;gap:15px;text-align:left;max-width:390px;
+ margin:28px auto 0;padding:11px 17px 11px 8px;border:1px solid #e5d4d15b;
+ background:linear-gradient(102deg,#e5d1ed20,#d4d6f006);}
+.mt-partner-art {flex:0 0 110px;width:110px;height:105px;display:grid;place-items:center;
+ background:radial-gradient(circle,#c9d9f05d,transparent 72%);}
+.mt-partner-art img {width:110px;height:105px;object-fit:contain;filter:drop-shadow(0 8px 14px #0008);}
+.mt-partner-copy {display:flex;flex-direction:column;gap:5px;}
+.mt-partner-kicker {font:600 .54rem "Cinzel",Georgia,serif;letter-spacing:.13em;color:#d8c8bb;}
+.mt-partner-copy strong {font:500 2.1rem "Cormorant Garamond",Georgia,serif;color:#f4e5db;}
+.mt-partner-copy span:last-child {font:italic 1rem "Cormorant Garamond",Georgia,serif;color:#c7b9db;}
+@media(max-width:780px) {
+ .mt-side-note{display:none;}
+ .mt-page .hud{inset:23px 22px auto;}
+ .mt-page .hud-brand{font-size:.67rem;}
+ .mt-page .dialogue-ui{width:calc(100% - 30px);}
+}
+@media(max-width:600px) {
+ .mt-page .stage{top:1%;bottom:18%;}
+ .mt-page .intro{padding:24px 8px;}
+ .mt-page .intro h1{font-size:clamp(3.3rem,12vw,5.8rem);}
+ .mt-page .intro-copy{font-size:1.23rem;}
+ .mt-page .dialogue-ui{bottom:12px;width:calc(100% - 20px);}
+ .mt-page .dialogue-panel{padding:22px 21px 17px;min-height:197px;max-height:57dvh;overflow:auto;}
+ .mt-page .dialogue-text{font-size:1.24rem;line-height:1.45;max-height:26dvh;}
+ .mt-ring-outer{width:84vw;}
+ .mt-ring-inner{width:59vw;}
+ .mt-spindle{width:94vw;}
+ .mt-arceus-art{width:min(82vw,355px);max-height:49vh;}
+ .mt-nameplate{top:72%;font-size:.70rem;}
+ .mt-page .ending{padding:25px 18px;}
+ .mt-page .ending h1{font-size:3rem;}
+ .mt-partner-art{width:82px;height:86px;flex-basis:82px;}
+ .mt-partner-art img{width:88px;height:86px;}
+ .mt-page .choice{font-size:1.16rem;}
+}
+@media(max-height:740px) {
+ .mt-page .stage{top:-4%;bottom:25%;}
+ .mt-arceus-art{width:min(45vh,360px);}
+ .mt-page .dialogue-panel{min-height:164px;}
+ .mt-page .dialogue-ui{bottom:10px;}
+ .mt-page .intro h1{margin:13px auto;}
+ .mt-chapter-line{margin-bottom:14px;}
+}
+@media(prefers-reduced-motion:reduce) {
+ .mt-nebula,.mt-mote,.mt-ring-outer,.mt-spindle,.mt-dawn{animation:none!important;}
+ .mt-arceus-art,.mt-nameplate,.mt-divine-glow,.mt-drifting-field,.mt-framed-field{transition:none!important;}
+}
