@@ -1,0 +1,182 @@
+/* Rizqi's dream: a living celestial mosaic. Gold is Arceus; emerald is
+   balance, growth, and change. The hex motif is foreshadowing, not a reveal. */
+:root { --rz-gold:#f2dcaa; --rz-mint:#b2e6bb; --rz-forest:#0b1c21; }
+.rz-body { background:#030d15; }
+.rz-page { min-height:100dvh; --accent:#addfba; --accent-rgb:173,223,186;
+  background:radial-gradient(ellipse 35% 55% at 50% 46%,#2a4c405e 0,transparent 78%),
+    radial-gradient(ellipse 60% 30% at 50% 85%,#123c4466 0,transparent 95%),
+    radial-gradient(ellipse 60% 45% at 50% 0,#18324a4d 0,transparent 80%),#030b13; }
+.rz-page .stars { opacity:.6; }
+.rz-stardust,.rz-haze,.rz-mosaic,.rz-floor { position:absolute; inset:0; pointer-events:none; }
+.rz-stardust { background-image:
+  radial-gradient(circle at 9% 18%,#d1ffc6 0 1px,transparent 2px),
+  radial-gradient(circle at 82% 27%,#c0e5a5 0 1px,transparent 3px),
+  radial-gradient(circle at 63% 74%,#f5e8b1 0 1px,transparent 2px),
+  radial-gradient(circle at 35% 83%,#9ee4c7 0 1px,transparent 3px);
+  background-size:270px 210px,350px 300px,310px 250px,430px 320px;
+  animation:rz-star-pulse 7s ease-in-out infinite alternate; }
+@keyframes rz-star-pulse { from{opacity:.35} to{opacity:.85} }
+.rz-haze { z-index:0; background:
+  radial-gradient(ellipse 22% 32% at 24% 52%,#a2d8b523,transparent),
+  radial-gradient(ellipse 22% 32% at 80% 43%,#e8dba42b,transparent),
+  radial-gradient(ellipse 35% 18% at 49% 70%,#68cda52b,transparent);
+  filter:blur(24px); animation:rz-breathe 12s ease-in-out infinite alternate; }
+@keyframes rz-breathe { from {transform:scale(.95);opacity:.6} to{transform:scale(1.07);opacity:1} }
+.rz-mosaic { z-index:0; opacity:.16; background-image:
+  linear-gradient(30deg,#9fe5aa66 12%,transparent 12.5%,transparent 87%,#9fe5aa66 87.5%,#9fe5aa66),
+  linear-gradient(150deg,#9fe5aa66 12%,transparent 12.5%,transparent 87%,#9fe5aa66 87.5%,#9fe5aa66),
+  linear-gradient(30deg,#9fe5aa66 12%,transparent 12.5%,transparent 87%,#9fe5aa66 87.5%,#9fe5aa66),
+  linear-gradient(150deg,#9fe5aa66 12%,transparent 12.5%,transparent 87%,#9fe5aa66 87.5%,#9fe5aa66),
+  linear-gradient(60deg,#9fe5aa6655 25%,transparent 25.5%,transparent 75%,#9fe5aa6655 75%,#9fe5aa6655),
+  linear-gradient(60deg,#9fe5aa6655 25%,transparent 25.5%,transparent 75%,#9fe5aa6655 75%,#9fe5aa6655);
+  background-position:0 0,0 0,38px 66px,38px 66px,0 0,38px 66px;
+  background-size:76px 132px;
+  mask-image:radial-gradient(ellipse 72% 72% at 50% 52%,transparent 29%,#000 95%); }
+.rz-floor { z-index:0; inset:auto -13% -36% -13%; height:63%;
+  transform:perspective(470px) rotateX(70deg);
+  background-image:repeating-linear-gradient(90deg,transparent 0 64px,#a5c6af1d 65px,transparent 66px),
+    repeating-linear-gradient(0deg,transparent 0 64px,#a5c6af24 65px,transparent 66px);
+  mask-image:linear-gradient(transparent,#000 38%,transparent 92%); }
+.rz-page .stage { z-index:2; transform:translateY(-6%); }
+.rz-page .stage .sacred { z-index:4; opacity:.60; transform:scale(.8);
+  transition:opacity 1.6s ease,filter 1.6s ease; }
+.rz-sanctum { position:absolute; inset:0; display:grid;place-items:center; }
+.rz-halo { position:absolute; border-radius:50%; border:1px solid #d1dba46b;
+  box-shadow:0 0 55px #bfe2a81c,inset 0 0 90px #bfe2a810;
+  transition:box-shadow 1.5s ease; }
+.halo-outer { width:min(67vmin,650px);aspect-ratio:1;
+  background:radial-gradient(circle,#c0e5ac12,transparent 66%);
+  animation:rz-ring 65s linear infinite; }
+.halo-outer::before { content:""; position:absolute;inset:9%;border:1px dashed #e8daaa75;border-radius:50%; }
+.halo-middle { width:min(53vmin,520px);aspect-ratio:1;border-color:#f3dba56b;transform:rotate(45deg);border-radius:27%; }
+.halo-inner { width:min(38vmin,385px);aspect-ratio:1;border-color:#bdffce77;opacity:.73; }
+.rz-lattice { position:absolute;width:min(77vmin,760px);aspect-ratio:1;
+  background:repeating-conic-gradient(#d6f5c039 0 1deg,transparent 1deg 20deg);
+  mask-image:radial-gradient(circle,transparent 61%,#000 62%,#000 62.5%,transparent 63.5%);
+  animation:rz-ring 100s linear infinite; }
+.lattice-second { width:min(84vmin,830px);opacity:.33;animation-direction:reverse;animation-duration:120s; }
+.rz-needle { position:absolute;width:1px;height:105vh;
+  background:linear-gradient(transparent,#c7f4c12a,transparent);
+  box-shadow:0 0 25px 8px #ccdfab0d; }
+.rz-core { position:absolute;width:min(47vmin,470px);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,#b8f5af27,#d6e8aa0d 42%,transparent 70%);
+  filter:blur(20px);animation:rz-breathe 6s ease-in-out infinite alternate; }
+@keyframes rz-ring { to{transform:rotate(360deg)} }
+.rz-vision { position:absolute;z-index:5;inset:0;display:grid;place-items:center;pointer-events:none; }
+.rz-vision-glow { position:absolute;width:min(68vmin,680px);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,#f3dea744,#f6e8bc14 48%,transparent 72%);
+  opacity:0;filter:blur(15px);transition:opacity 2s ease; }
+.rz-arceus-art { width:clamp(230px,47vmin,520px);height:auto;max-height:67%;
+  object-fit:contain;opacity:0;transform:translateY(25px) scale(.92);
+  filter:brightness(2) blur(11px) drop-shadow(0 0 30px #e5d3a17d);
+  transition:opacity 1.6s ease,transform 2s ease,filter 2.2s ease; }
+.rz-arceus-title { position:absolute;top:78%;margin:0;text-align:center;
+  font:500 .85rem "Cinzel",Georgia,serif;letter-spacing:.4em;color:#fff3cf;
+  text-shadow:0 0 20px #f0dfadc4;opacity:0;transition:opacity 1.4s ease 1s; }
+.rz-arceus-title small { display:block;font-size:.53rem;letter-spacing:.23em;margin-top:7px;color:#cfbc98; }
+.rz-page[data-voice="arceus"] .rz-arceus-art { opacity:1;transform:translateY(-10px) scale(1);
+  filter:brightness(1.1) blur(0) drop-shadow(0 0 34px #ecd7a471); }
+.rz-page[data-voice="arceus"] .rz-vision-glow,
+.rz-page[data-voice="arceus"] .rz-arceus-title { opacity:1; }
+.rz-page[data-voice="arceus"] .sacred { opacity:.065;filter:blur(14px); }
+.rz-page[data-voice="arceus"] .halo-outer {box-shadow:0 0 60px #eddaad4a,inset 0 0 70px #bde5b51f;}
+.rz-page[data-scene="fracture"] .rz-mosaic { opacity:.31;filter:saturate(.25); }
+.rz-page[data-scene="fracture"] .rz-haze { opacity:.22;filter:blur(35px) saturate(.2); }
+.rz-page[data-scene="fracture"] .rz-core { opacity:.1; }
+.rz-page[data-scene="fracture"] .halo-outer {animation-play-state:paused;filter:grayscale(1); }
+.rz-page[data-scene="cells"] .rz-mosaic { opacity:.34; }
+.rz-page[data-scene="cells"] .rz-core { filter:blur(14px) brightness(1.5); }
+.rz-page[data-scene="reveal"] .rz-vision-glow { opacity:.7; }
+.rz-page .hud { inset:27px 38px auto; }
+.rz-page .hud-brand { font-family:"Cinzel",Georgia,serif;font-size:.78rem;letter-spacing:.35em; }
+.rz-page .hud-chapter { font-family:"Cinzel",Georgia,serif;font-size:.62rem;color:#dfccab; }
+.rz-side-mark { position:absolute;top:50%;left:32px;transform:translateY(-50%);
+  writing-mode:vertical-rl;display:flex;align-items:center;gap:19px;
+  font:500 .53rem "Cinzel",Georgia,serif;letter-spacing:.18em;color:#adbfba9b; }
+.rz-side-mark i { width:1px;height:80px;background:linear-gradient(transparent,#d3c59d,transparent); }
+.rz-page .vision-overlay { z-index:7; }
+.rz-page .intro { padding:30px 26px;max-width:750px;
+  background:radial-gradient(ellipse at 50% 65%,#06161dc7,transparent 75%); }
+.rz-prelude { margin:0 0 33px;font:500 .6rem "Cinzel",Georgia,serif;letter-spacing:.25em;color:#b6bcb3; }
+.rz-prelude span { padding:0 12px;color:#e3d5a4; }
+.rz-page .intro .eyebrow {font:500 .61rem "Cinzel",Georgia,serif;letter-spacing:.26em;color:#d0d9bd;}
+.rz-page .intro h1,.rz-page .ending h1 {font:500 clamp(3.3rem,7vw,6.65rem)/.98 "Cormorant Garamond",Georgia,serif;
+  color:#f5ebd7;letter-spacing:-.03em;max-width:750px;margin:20px auto 12px;text-wrap:balance;
+  text-shadow:0 0 35px #e8d2a02c;}
+.rz-ornament { margin:23px auto;color:#d7d5ab;font-size:1.5rem;letter-spacing:.25em; }
+.rz-page .intro-copy { font:normal clamp(1.2rem,2.1vw,1.45rem)/1.55 "Cormorant Garamond",Georgia,serif;max-width:480px;color:#d4dece; }
+.rz-subline { margin:20px 0 0;font:italic 1.06rem "Cormorant Garamond",Georgia,serif;color:#a8c3b2; }
+.rz-page .action { min-height:58px;padding:14px 28px;border:1px solid #e8d5a0a1;
+  background:linear-gradient(110deg,#e2d3a71b,#122c31b8);
+  color:#fbf1d4;font:500 .68rem "Cinzel",Georgia,serif;letter-spacing:.16em;
+  box-shadow:0 0 50px #a4d9b31a; }
+.rz-page .action:hover { background:linear-gradient(110deg,#e7d4a135,#24433dae); }
+.rz-button-arrow { margin-left:22px;font:1.1rem Georgia,serif; }
+.rz-page .intro-note { font:.58rem "Cinzel",Georgia,serif;letter-spacing:.16em;color:#99aca5;margin-top:22px; }
+.rz-page .dialogue-ui {z-index:10;bottom:clamp(23px,5vh,67px);width:min(840px,calc(100% - 76px));}
+.rz-page .dialogue-panel {position:relative;min-height:205px;padding:27px 37px 23px;
+  border:1px solid #d6d0aa60;border-top:1px solid #e3d4a8aa;
+  background:linear-gradient(118deg,#081821f0,#12262be9 49%,#071520f5);
+  box-shadow:0 0 0 5px #b4d7a706,0 25px 90px #000b,inset 0 1px #ffedb611; }
+.rz-page .dialogue-panel::before {content:"✧";position:absolute;left:28px;top:-12px;
+  background:#0a1922;padding:0 7px;color:#eadcb4;font-size:18px;}
+.rz-page .dialogue-speaker { font:600 .62rem "Cinzel",Georgia,serif;color:#f1dba6;letter-spacing:.22em;margin-bottom:13px; }
+.rz-page .dialogue-text { font:normal clamp(1.22rem,2vw,1.48rem)/1.47 "Cormorant Garamond",Georgia,serif;
+  color:#f1f0e8;min-height:78px;max-height:min(31dvh,228px);overflow:auto; }
+.rz-page .dialogue-text.narration { color:#c3dbc8; }
+.rz-page .choice {font:normal 1.2rem "Cormorant Garamond",Georgia,serif;
+  background:#a8dfba0b;border:1px solid #afd7af75;padding:12px 16px;}
+.rz-page .choice:hover,.rz-page .choice:focus-visible {background:#a8dfba2c;border-color:#d7e6aa;}
+.rz-page .dialogue-hint,.rz-page .step-count {font-size:.63rem;letter-spacing:.07em;}
+.rz-page .next-button {font:600 .65rem "Cinzel",Georgia,serif;color:#e6daa9;}
+.rz-page .ending {padding:35px 48px;max-width:670px;border:1px solid #e4db9b36;
+  background:linear-gradient(135deg,#091921df,#1a3236e0);box-shadow:0 0 75px #bfd7a817;}
+.rz-page .ending h1 {font-size:clamp(2.8rem,5.3vw,4.9rem);}
+.rz-page .ending-copy {font:1.2rem/1.45 "Cormorant Garamond",Georgia,serif;}
+.rz-partner-card {display:flex;align-items:center;text-align:left;gap:15px;max-width:370px;margin:27px auto 0;
+  border:1px solid #cee0ae55;background:linear-gradient(100deg,#d1e6ad18,#d1e6ad04);padding:11px 18px 11px 9px;}
+.rz-partner-portrait {flex:0 0 108px;width:108px;height:105px;display:grid;place-items:center;
+  background:radial-gradient(circle,#c3eaa344,transparent 72%);}
+.rz-partner-portrait img {width:106px;height:105px;object-fit:contain;filter:drop-shadow(0 8px 14px #0009);}
+.rz-partner-details {display:flex;flex-direction:column;gap:5px;}
+.rz-partner-label {font:600 .56rem "Cinzel",Georgia,serif;letter-spacing:.13em;color:#d4d3a2;}
+.rz-partner-details strong {font:500 2.1rem "Cormorant Garamond",Georgia,serif;color:#f3ebd2;}
+.rz-partner-text {font:italic 1rem "Cormorant Garamond",Georgia,serif;color:#b4ccbb;}
+@media(max-width:780px) {
+  .rz-side-mark{display:none;}
+  .rz-page .hud{inset:23px 22px auto;}
+  .rz-page .hud-brand{font-size:.68rem;}
+  .rz-page .dialogue-ui{width:calc(100% - 30px);}
+}
+@media(max-width:600px) {
+  .rz-page .stage{top:2%;bottom:17%;}
+  .rz-page .intro{padding:23px 9px;}
+  .rz-page .intro h1{font-size:clamp(3.3rem,12vw,5.8rem);}
+  .rz-page .intro-copy{font-size:1.2rem;}
+  .rz-page .dialogue-ui{width:calc(100% - 20px);bottom:12px;}
+  .rz-page .dialogue-panel{padding:23px 21px 17px;min-height:197px;max-height:57dvh;overflow:auto;}
+  .rz-page .dialogue-text{font-size:1.22rem;line-height:1.45;max-height:26dvh;}
+  .rz-halo.halo-outer{width:82vw;}
+  .rz-halo.halo-middle{width:65vw;}
+  .rz-halo.halo-inner{width:47vw;}
+  .rz-lattice{width:96vw;}
+  .rz-arceus-art{width:min(82vw,350px);max-height:49vh;}
+  .rz-arceus-title{top:73%;font-size:.68rem;}
+  .rz-page .ending{padding:24px 18px;}
+  .rz-page .ending h1{font-size:3rem;}
+  .rz-partner-portrait{flex-basis:84px;width:84px;height:88px;}
+  .rz-partner-portrait img{width:89px;height:87px;}
+  .rz-page .choice{font-size:1.15rem;}
+}
+@media(max-height:740px) {
+  .rz-page .stage{top:-4%;bottom:23%;}
+  .rz-arceus-art{width:min(46vh,350px);}
+  .rz-page .dialogue-panel{min-height:163px;}
+  .rz-page .dialogue-ui{bottom:10px;}
+  .rz-page .intro h1{margin:13px auto;}
+  .rz-prelude{margin-bottom:15px;}
+}
+@media(prefers-reduced-motion:reduce) {
+  .rz-haze,.rz-stardust,.rz-halo,.rz-lattice,.rz-core{animation:none!important;}
+  .rz-arceus-art,.rz-vision-glow,.rz-arceus-title{transition:none!important;}
+}

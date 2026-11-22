@@ -7,11 +7,20 @@
   <meta name="robots" content="noindex, nofollow">
   <meta name="description" content="A personal encounter with Arceus.">
   <title>Rizqi · A Dream Beyond Time | Santara</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../styles/site.css">
+  <link rel="stylesheet" href="../../styles/rizqi.css">
 </head>
-<body>
-  <main class="experience" id="experience">
+<body class="rz-body">
+  <main class="experience rz-page" id="experience">
     <div class="stars" aria-hidden="true"></div>
+    <div class="rz-stardust" aria-hidden="true"></div>
+    <div class="rz-haze" aria-hidden="true"></div>
+    <div class="rz-mosaic" aria-hidden="true"></div>
+    <div class="rz-floor" aria-hidden="true"></div>
+    <div class="rz-side-mark" aria-hidden="true"><span>II · THE MEASURE OF ALL THINGS</span><i></i><span>A PRIVATE AUDIENCE</span></div>
     <div class="sky-veil" aria-hidden="true"></div>
     <div class="dream-curtain" aria-hidden="true"></div>
     <header class="hud">
@@ -19,6 +28,20 @@
       <div class="hud-right"><span class="hud-chapter" id="hud-chapter">AN INVITATION</span><nav class="hud-controls" id="hud-controls" aria-label="Dream controls"><button type="button" class="hud-button" id="memory-button" aria-haspopup="dialog">Revisit words</button><button type="button" class="hud-button" id="instant-button" aria-pressed="false">Instant text: off</button></nav></div>
     </header>
     <div class="stage" aria-hidden="true">
+      <div class="rz-sanctum">
+        <div class="rz-halo halo-outer"></div>
+        <div class="rz-halo halo-middle"></div>
+        <div class="rz-halo halo-inner"></div>
+        <div class="rz-lattice"></div>
+        <div class="rz-lattice lattice-second"></div>
+        <div class="rz-needle"></div>
+        <div class="rz-core"></div>
+      </div>
+      <div class="rz-vision">
+        <div class="rz-vision-glow"></div>
+        <img class="rz-arceus-art" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png" width="475" height="475" alt="" decoding="async">
+        <p class="rz-arceus-title">ARCEUS <small>THE ORIGINAL ONE</small></p>
+      </div>
       <div class="aura"></div>
       <div class="light-column"></div>
       <div class="horizon-ring"></div>
@@ -34,19 +57,25 @@
     </div>
     <div class="vision-overlay" id="intro-wrap">
       <section class="intro" id="intro" aria-labelledby="intro-title">
+        <p class="rz-prelude">CHAPTER ZERO <span>✦</span> THE AWAKENING</p>
         <p class="eyebrow">A MESSAGE FOR <span id="player-name">Rizqi</span></p>
         <h1 id="intro-title">A dream beyond time</h1>
-        <span class="ornament" aria-hidden="true">✧</span>
-        <p class="intro-copy">There is a place between sleep and waking where even the stars fall silent. Tonight, something is waiting for you there.</p>
-        <button class="action" id="start" type="button">Enter the dream</button>
+        <div class="rz-ornament" aria-hidden="true"><span>✧</span></div>
+        <p class="intro-copy">Beyond the edge of sleep, something ancient waits among the stars. It has called you by name, and the world is holding its breath.</p>
+        <p class="rz-subline">No two paths through this world are quite alike.</p>
+        <button class="action" id="start" type="button">Enter the dream <span class="rz-button-arrow" aria-hidden="true">↗</span></button>
         <p class="intro-note">Click the dialogue or press Space to continue</p>
       </section>
       <section class="ending hidden" id="ending" aria-labelledby="ending-title">
+        <p class="rz-prelude">CHAPTER ZERO <span>✦</span> THE ROAD AHEAD</p>
         <p class="eyebrow">THE DREAM ENDS</p>
         <h1 id="ending-title">Morning is waiting,<br><span id="ending-name">Rizqi</span>.</h1>
         <div class="gold-rule" aria-hidden="true"></div>
-        <p class="ending-copy">Beyond the familiar streets of Luma Town, your journey is about to begin.</p>
-        <p class="ending-starter">Your partner · <span id="starter-name"></span></p>
+        <p class="ending-copy">Luma Town is waiting, and so are your friends. Whatever the morning brings, you won't face it alone.</p>
+        <div class="rz-partner-card">
+          <div class="rz-partner-portrait"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/610.png" alt="Axew official Pokémon artwork" width="475" height="475" loading="lazy" decoding="async"></div>
+          <div class="rz-partner-details"><span class="rz-partner-label">ALREADY BY YOUR SIDE</span><strong id="starter-name">Axew</strong><span class="rz-partner-text">Your partner for the road ahead.</span></div>
+        </div>
         <button class="action" id="replay" type="button">Experience the dream again</button>
       </section>
     </div>

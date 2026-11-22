@@ -86,6 +86,7 @@ export function launch(story) {
     $("choices").classList.add("hidden");
     $("next").classList.add("hidden");
     $("speaker").textContent = step.speaker;
+    $("experience").dataset.scene = step.scene || "normal";
     $("experience").dataset.voice = step.speaker === "???" ? "mystery" : step.speaker === "THE DREAM" ? "narration" : "arceus";
     $("sigil-label").textContent = step.speaker === "???" ? "A VOICE" : step.speaker === "THE DREAM" ? "BEYOND SLEEP" : "ARCEUS";
     $("dialogue-text").classList.toggle("narration", step.speaker === "THE DREAM");
@@ -122,6 +123,7 @@ export function launch(story) {
     $("ending").classList.remove("hidden");
     $("hud-chapter").textContent = "THE MORNING AWAITS";
     $("experience").dataset.voice = "narration";
+    $("experience").dataset.scene = "ending";
     $("replay").focus({preventScroll:true});
   }
 
