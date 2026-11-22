@@ -1,0 +1,245 @@
+/* CD / YAO ZONG: OF SNOW AND STARLIGHT
+   A cosmic cycle of birth, seasons, endings, stillness and renewal.
+   Winter blue and champagne gold; no Legendary other than Arceus is named. */
+:root { --cd-snow:#cceaf2; --cd-gold:#f7ddb0; --cd-night:#07121e; }
+.cd-body { background:#050d17; }
+.cd-page {
+  min-height:100dvh; --accent:#bbdfe8; --accent-rgb:187,223,232;
+  background:
+    radial-gradient(ellipse 49% 48% at 48% 45%,#46728d57 0,transparent 78%),
+    radial-gradient(ellipse 56% 35% at 50% 94%,#35637b55 0,transparent 83%),
+    radial-gradient(ellipse 80% 65% at 50% -10%,#1f365843,transparent 80%),#040b17;
+  --cd-season:#c7e9fa;
+  --cd-tree-color:#d8ebef;
+  --cd-nightfall:0;
+}
+.cd-page .stars { opacity:.6; }
+.cd-aurora,.cd-stardust,.cd-floor,.cd-particles { position:absolute;inset:0;pointer-events:none; }
+.cd-aurora { z-index:0;
+  background:radial-gradient(ellipse 23% 46% at 18% 58%,#6faab740,transparent),
+  radial-gradient(ellipse 25% 44% at 84% 40%,#aa8c9c32,transparent),
+  radial-gradient(ellipse 46% 16% at 50% 73%,#e9e1c51b,transparent);
+  filter:blur(30px);
+  animation:cd-aurora-move 18s ease-in-out infinite alternate;
+  transition:filter 1.8s ease,opacity 1.8s ease;
+}
+@keyframes cd-aurora-move { from{transform:translateX(-2%) scale(.97)}to{transform:translateX(2%) scale(1.1)} }
+.cd-stardust { z-index:0;opacity:.4;
+  background:radial-gradient(circle at 11% 24%,#f7e7d1 0 1px,transparent 2px),
+  radial-gradient(circle at 73% 78%,#fff4db 0 1px,transparent 2px),
+  radial-gradient(circle at 83% 12%,#c2e8f8 0 1px,transparent 2px);
+  background-size:320px 270px,450px 310px,370px 280px;
+}
+.cd-floor { z-index:0;inset:auto -18% -34% -18%;height:66%;
+  transform:perspective(550px) rotateX(72deg);transform-origin:top;
+  background:repeating-linear-gradient(90deg,transparent 0 78px,#c7dfe71c 79px,transparent 80px),
+    repeating-linear-gradient(0deg,transparent 0 78px,#c7dfe71e 79px,transparent 80px);
+  mask-image:linear-gradient(transparent,#000 40%,transparent 94%);
+}
+.cd-particles {z-index:3;overflow:hidden;transition:filter 1.8s ease,opacity 1.8s ease;}
+.cd-snowflake {
+  position:absolute;left:var(--x);top:var(--y);width:var(--size);height:var(--size);
+  border-radius:50%;background:var(--cd-season);
+  box-shadow:0 0 13px 3px #e7f9ff5b;opacity:.65;
+  animation:cd-fall var(--duration) ease-in-out var(--delay) infinite alternate;
+}
+@keyframes cd-fall {
+ from {transform:translate(-12px,-15px) rotate(0);opacity:.21;}
+ to {transform:translate(17px,22px) rotate(65deg);opacity:.84;}
+}
+.cd-page .stage {z-index:2;transform:translateY(-7%);}
+.cd-cosmos {position:absolute;inset:0;display:grid;place-items:center;}
+.cd-orbit {position:absolute;border-radius:50%;border:1px solid #c1d9d75c;box-shadow:0 0 65px #dddfc718,inset 0 0 90px #bdcfe710;}
+.orbit-outer {width:min(70vmin,720px);aspect-ratio:1;animation:cd-rotate 83s linear infinite;}
+.orbit-outer::after {content:"";position:absolute;inset:9%;border:1px dashed #f1e2bd52;border-radius:50%;}
+.orbit-interior {width:min(51vmin,530px);aspect-ratio:1;border-color:#e4ceab6c;background:radial-gradient(circle,#c5e8fc13,transparent 67%);}
+.orbit-tilted {width:min(60vmin,620px);aspect-ratio:1;border-color:#f4e6d237;transform:rotateX(70deg) rotate(-18deg);}
+.cd-celestial-sweep {position:absolute;width:min(79vmin,810px);aspect-ratio:1;
+  background:repeating-conic-gradient(#d9e1e13a 0 1deg,transparent 1deg 18deg);
+  mask-image:radial-gradient(circle,transparent 62%,#000 63%,#000 63.5%,transparent 65%);
+  animation:cd-rotate 120s linear infinite reverse;
+}
+@keyframes cd-rotate{to{transform:rotate(360deg)}}
+.cd-moon {position:absolute;width:min(48vmin,500px);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,#e6eced2d,#dddedb0b 48%,transparent 71%);
+  filter:blur(19px);animation:cd-aurora-move 8s ease-in-out infinite alternate;
+}
+.cd-world-cycle {position:absolute;z-index:4;width:min(53vmin,560px);aspect-ratio:1;
+  display:grid;place-items:center;opacity:0;transform:translateY(20px) scale(.9);
+  transition:opacity 2s ease,transform 2.2s ease,filter 1.8s ease;
+  filter:drop-shadow(0 0 30px #cbdae42b);
+}
+.cd-tree {width:100%;height:100%;overflow:visible;}
+.cd-branches {opacity:.75;transition:opacity 1.7s ease,filter 1.7s ease;}
+.cd-canopy {fill:var(--cd-tree-color);opacity:.8;transition:fill 2s ease,opacity 2s ease,filter 2s ease;}
+.cd-leaf-cloud {opacity:.26;stroke:#f3efe363;stroke-width:1;}
+.cd-life-lights {opacity:.8;filter:drop-shadow(0 0 10px #f9e5b5a1);transition:opacity 1.3s ease;}
+.cd-season-caption {position:absolute;top:92%;color:#e6dece;
+  font:500 .58rem "Cinzel",Georgia,serif;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap;}
+.cd-season-caption::before {content:"";opacity:.9;transition:opacity 1s ease;}
+.cd-page[data-scene="dawn"] .cd-season-caption::before {content:"THE FIRST DAWN";}
+.cd-page[data-scene="spring"] .cd-season-caption::before {content:"SPRING · LIFE BEGINS";}
+.cd-page[data-scene="autumn"] .cd-season-caption::before {content:"AUTUMN · THE PASSING YEARS";}
+.cd-page[data-scene="winter"] .cd-season-caption::before {content:"WINTER · THE QUIET AFTER";}
+.cd-page[data-scene="eclipse"] .cd-season-caption::before {content:"BEYOND THE LAST LIGHT";}
+.cd-page[data-scene="stillfall"] .cd-season-caption::before {content:"THE MOMENT THAT WILL NOT END";}
+.cd-page[data-scene="renewal"] .cd-season-caption::before {content:"A NEW BEGINNING";}
+.cd-page[data-scene="memories"] .cd-season-caption::before {content:"THE DAYS THAT REMAIN";}
+.cd-page[data-scene="dawn"] .cd-world-cycle,
+.cd-page[data-scene="spring"] .cd-world-cycle,
+.cd-page[data-scene="autumn"] .cd-world-cycle,
+.cd-page[data-scene="winter"] .cd-world-cycle,
+.cd-page[data-scene="eclipse"] .cd-world-cycle,
+.cd-page[data-scene="stillfall"] .cd-world-cycle,
+.cd-page[data-scene="renewal"] .cd-world-cycle,
+.cd-page[data-scene="memories"] .cd-world-cycle {opacity:1;transform:translateY(-8px) scale(1);}
+.cd-page[data-scene="dawn"] {--cd-tree-color:#e5f1c7;--cd-season:#fff1c7;}
+.cd-page[data-scene="spring"] {--cd-tree-color:#a5efd5;--cd-season:#c6f8de;}
+.cd-page[data-scene="autumn"] {--cd-tree-color:#e7bc75;--cd-season:#f8d399;}
+.cd-page[data-scene="winter"] {--cd-tree-color:#d8ecf7;--cd-season:#deefff;}
+.cd-page[data-scene="eclipse"] {--cd-tree-color:#4c5269;--cd-season:#978aab;}
+.cd-page[data-scene="stillfall"] {--cd-tree-color:#a8d4e5;--cd-season:#b8d8e7;}
+.cd-page[data-scene="renewal"] {--cd-tree-color:#b8eebd;--cd-season:#d4ffe2;}
+.cd-page[data-scene="memories"] {--cd-tree-color:#e7d7c5;--cd-season:#fce7c6;}
+.cd-page[data-scene="autumn"] .cd-canopy{opacity:.45;}
+.cd-page[data-scene="winter"] .cd-canopy,
+.cd-page[data-scene="eclipse"] .cd-canopy{opacity:.06;}
+.cd-page[data-scene="renewal"] .cd-canopy{opacity:.17;}
+.cd-page[data-scene="spring"] .cd-canopy{opacity:.8;}
+.cd-page[data-scene="memories"] .cd-canopy{opacity:.56;}
+.cd-page[data-scene="eclipse"] .cd-life-lights {opacity:0;}
+.cd-page[data-scene="winter"] .cd-life-lights {opacity:.08;}
+.cd-page[data-scene="stillfall"] .cd-life-lights{opacity:.19;}
+.cd-page[data-scene="renewal"] .cd-life-lights{opacity:.55;}
+.cd-page[data-scene="stillfall"] .cd-snowflake,
+.cd-page[data-scene="stillfall"] .orbit-outer,
+.cd-page[data-scene="stillfall"] .cd-celestial-sweep,
+.cd-page[data-scene="stillfall"] .cd-moon{animation-play-state:paused;}
+.cd-page[data-scene="stillfall"] .cd-particles {filter:grayscale(1);opacity:.30;}
+.cd-page[data-scene="stillfall"] .cd-aurora{opacity:.10;filter:blur(30px) saturate(0);}
+.cd-page[data-scene="eclipse"] .cd-aurora {opacity:.12;filter:blur(40px) saturate(.15);}
+.cd-page[data-scene="eclipse"] .cd-cosmos {filter:brightness(.5);}
+.cd-page[data-scene="eclipse"] .cd-world-cycle {filter:drop-shadow(0 0 50px #110e23);}
+.cd-page[data-scene="renewal"] .cd-world-cycle {filter:drop-shadow(0 0 40px #8bd8b266);}
+.cd-page[data-scene="renewal"] .cd-aurora {filter:blur(25px) saturate(1.5);opacity:1;}
+.cd-page .stage .sacred {z-index:6;opacity:.55;transform:scale(.72);
+  transition:opacity 1.7s ease,filter 1.7s ease;}
+.cd-appearance {position:absolute;inset:0;z-index:7;display:grid;place-items:center;pointer-events:none;
+ transition:opacity 1.6s ease;}
+.cd-appearance-glow {position:absolute;width:min(70vmin,700px);aspect-ratio:1;border-radius:50%;
+ background:radial-gradient(circle,#ffe7bf42,#eed9aa11 45%,transparent 73%);
+ filter:blur(18px);opacity:0;transition:opacity 1.8s ease;}
+.cd-arceus-art {width:clamp(245px,47vmin,540px);max-height:65%;height:auto;object-fit:contain;
+ opacity:0;transform:translateY(20px) scale(.91);
+ filter:brightness(2) blur(10px) drop-shadow(0 0 40px #e9d6a485);
+ transition:opacity 1.6s ease,transform 2.2s ease,filter 2s ease;}
+.cd-arceus-nameplate {position:absolute;top:78%;text-align:center;
+ color:#fdf0d6;font:500 .82rem "Cinzel",Georgia,serif;letter-spacing:.43em;
+ text-shadow:0 0 19px #f9e3b591;opacity:0;
+ transition:opacity 1.6s ease 1s;}
+.cd-arceus-nameplate small {display:block;margin-top:8px;color:#c9c8c8;font-size:.55rem;letter-spacing:.24em;}
+.cd-page[data-voice="arceus"] .cd-arceus-art {opacity:1;transform:translateY(-9px) scale(1);
+ filter:brightness(1.1) blur(0) drop-shadow(0 0 32px #f4ddb86d);}
+.cd-page[data-voice="arceus"] .cd-appearance-glow,
+.cd-page[data-voice="arceus"] .cd-arceus-nameplate{opacity:1;}
+.cd-page[data-voice="arceus"] .stage .sacred{opacity:.06;filter:blur(14px);}
+.cd-page[data-scene="dawn"] .cd-appearance,
+.cd-page[data-scene="spring"] .cd-appearance,
+.cd-page[data-scene="autumn"] .cd-appearance,
+.cd-page[data-scene="winter"] .cd-appearance,
+.cd-page[data-scene="eclipse"] .cd-appearance,
+.cd-page[data-scene="stillfall"] .cd-appearance,
+.cd-page[data-scene="renewal"] .cd-appearance,
+.cd-page[data-scene="memories"] .cd-appearance {opacity:.085;}
+.cd-page .hud {inset:28px 42px auto;align-items:flex-start;}
+.cd-page .hud-brand{font:500 .78rem "Cinzel",Georgia,serif;letter-spacing:.34em;color:#f1e5d6;}
+.cd-page .hud-chapter {font:500 .6rem "Cinzel",Georgia,serif;letter-spacing:.15em;color:#c8e0e8;}
+.cd-side-note {position:absolute;left:35px;top:50%;z-index:4;transform:translateY(-50%);
+ writing-mode:vertical-rl;display:flex;align-items:center;gap:18px;
+ color:#c7e4e9a4;font:500 .55rem "Cinzel",Georgia,serif;letter-spacing:.19em;}
+.cd-side-note i {height:80px;width:1px;background:linear-gradient(transparent,#cee8f1,transparent);}
+.cd-page .vision-overlay {z-index:9;}
+.cd-page .intro{max-width:760px;padding:32px 24px;
+ background:radial-gradient(ellipse at 50% 59%,#071320c6,transparent 77%);}
+.cd-prelude {margin:0 0 32px;color:#bbcad1;font:500 .6rem "Cinzel",Georgia,serif;letter-spacing:.19em;}
+.cd-prelude span{padding:0 13px;color:#f0dcaf;}
+.cd-page .eyebrow {color:#e5dfd0;font:500 .64rem "Cinzel",Georgia,serif;letter-spacing:.24em;}
+.cd-page .intro h1,.cd-page .ending h1 {font:500 clamp(3.45rem,7vw,6.7rem)/.99 "Cormorant Garamond",Georgia,serif;
+ letter-spacing:-.033em;color:#f8f2e9;text-wrap:balance;max-width:720px;
+ margin:17px auto 12px;text-shadow:0 0 35px #eaf6fa25;}
+.cd-intro-glyph {color:#f0dfa9;font:1.5rem Georgia,serif;margin:20px auto;}
+.cd-page .intro-copy {color:#d3e0e8;font:normal clamp(1.17rem,2.1vw,1.41rem)/1.55 "Cormorant Garamond",Georgia,serif;max-width:490px;}
+.cd-intro-whisper {color:#c4c9ce;font:italic 1.05rem "Cormorant Garamond",Georgia,serif;margin:18px 0 0;}
+.cd-page .action{min-height:58px;padding:15px 28px;border:1px solid #e1d7b9b8;
+ background:linear-gradient(115deg,#e3e5d222,#1a32448f);color:#fff2db;
+ font:500 .67rem "Cinzel",Georgia,serif;letter-spacing:.16em;box-shadow:0 0 50px #ced8d520;}
+.cd-page .action:hover{background:linear-gradient(115deg,#f1e8d43d,#1c4456b8);}
+.cd-action-arrow{margin-left:22px;font:1rem Georgia,serif;}
+.cd-page .intro-note{color:#acbfcb;font:500 .58rem "Cinzel",Georgia,serif;letter-spacing:.12em;margin-top:23px;}
+.cd-page .dialogue-ui {z-index:12;bottom:clamp(21px,5vh,67px);width:min(870px,calc(100% - 76px));}
+.cd-page .dialogue-panel {min-height:207px;padding:28px 37px 22px;position:relative;
+ background:linear-gradient(120deg,rgba(8,20,35,.96),rgba(17,33,47,.93) 52%,rgba(9,17,32,.97));
+ border:1px solid #d2dfd28a;border-top:1px solid #f4dfb9a1;
+ box-shadow:0 0 0 5px #e4e8e207,0 25px 89px #000c,inset 0 1px #f3ead31a;}
+.cd-page .dialogue-panel::before {content:"❄";position:absolute;top:-12px;left:30px;background:#0d1b2e;color:#dfeff5;font-size:19px;padding:0 7px;}
+.cd-page .dialogue-speaker {color:#efddbb;font:600 .63rem "Cinzel",Georgia,serif;letter-spacing:.2em;margin-bottom:12px;}
+.cd-page .dialogue-text {font:normal clamp(1.2rem,2vw,1.48rem)/1.47 "Cormorant Garamond",Georgia,serif;
+ color:#e9f0f5;min-height:80px;max-height:min(31dvh,230px);overflow:auto;}
+.cd-page .dialogue-text.narration{color:#c4dce7;}
+.cd-page .choice {font:normal 1.22rem "Cormorant Garamond",Georgia,serif;background:#c4dfea12;
+ border:1px solid #bbd9e67e;color:#f4f5f4;padding:13px 16px;}
+.cd-page .choice:hover,.cd-page .choice:focus-visible{background:#d1eafa24;border-color:#f2dcae;}
+.cd-page .next-button{font:500 .65rem "Cinzel",Georgia,serif;color:#e6d4b3;}
+.cd-page .step-count,.cd-page .dialogue-hint{font-size:.62rem;letter-spacing:.08em;}
+.cd-page .ending {max-width:670px;padding:34px 46px;border:1px solid #d8e2d351;
+ background:linear-gradient(128deg,#0a192bea,#182d3ce9);box-shadow:0 0 85px #d1ecdb14;}
+.cd-page .ending h1{font-size:clamp(2.7rem,5.4vw,4.8rem);}
+.cd-page .ending-copy{font:normal 1.2rem/1.5 "Cormorant Garamond",Georgia,serif;color:#d5e0e9;}
+.cd-partner-card {display:flex;align-items:center;gap:15px;text-align:left;
+ max-width:393px;margin:28px auto 0;padding:10px 17px 10px 8px;border:1px solid #d4e7e351;
+ background:linear-gradient(110deg,#cceaf02b,#d5e2d605);}
+.cd-partner-art {flex:0 0 114px;width:114px;height:105px;display:grid;place-items:center;
+ background:radial-gradient(circle,#cdeafa59,transparent 75%);}
+.cd-partner-art img{width:110px;height:105px;object-fit:contain;filter:drop-shadow(0 8px 14px #0009);}
+.cd-partner-copy{display:flex;flex-direction:column;gap:5px;}
+.cd-partner-kicker{font:600 .54rem "Cinzel",Georgia,serif;letter-spacing:.12em;color:#d3ddcf;}
+.cd-partner-copy strong{font:500 2.1rem "Cormorant Garamond",Georgia,serif;color:#f9e7db;}
+.cd-partner-copy span:last-child{font:italic 1rem "Cormorant Garamond",Georgia,serif;color:#cad6df;}
+@media(max-width:780px){
+ .cd-side-note{display:none;}
+ .cd-page .hud{inset:23px 22px auto;}
+ .cd-page .hud-brand{font-size:.67rem;}
+ .cd-page .dialogue-ui{width:calc(100% - 30px);}
+}
+@media(max-width:600px){
+ .cd-page .stage{top:2%;bottom:21%;}
+ .cd-page .intro{padding:23px 8px;}
+ .cd-page .intro h1{font-size:clamp(3.25rem,12vw,5.6rem);}
+ .cd-page .intro-copy{font-size:1.22rem;}
+ .cd-page .dialogue-ui{width:calc(100% - 20px);bottom:12px;}
+ .cd-page .dialogue-panel{padding:22px 21px 17px;min-height:197px;max-height:57dvh;overflow:auto;}
+ .cd-page .dialogue-text{font-size:1.23rem;line-height:1.44;max-height:27dvh;}
+ .orbit-outer{width:85vw;}
+ .orbit-interior{width:63vw;}
+ .cd-celestial-sweep{width:95vw;}
+ .cd-world-cycle{width:78vw;}
+ .cd-arceus-art{width:min(83vw,355px);max-height:49vh;}
+ .cd-arceus-nameplate{top:74%;font-size:.7rem;}
+ .cd-page .ending{padding:24px 18px;}
+ .cd-page .ending h1{font-size:3rem;}
+ .cd-partner-art{flex-basis:83px;width:83px;height:86px;}
+ .cd-partner-art img{width:87px;height:85px;}
+ .cd-page .choice{font-size:1.14rem;}
+}
+@media(max-height:740px){
+ .cd-page .stage{top:-5%;bottom:25%;}
+ .cd-arceus-art{width:min(46vh,355px);}
+ .cd-page .dialogue-panel{min-height:165px;}
+ .cd-page .dialogue-ui{bottom:10px;}
+ .cd-page .intro h1{margin:12px auto;}
+ .cd-prelude{margin-bottom:13px;}
+}
+@media(prefers-reduced-motion:reduce){
+ .cd-aurora,.cd-snowflake,.cd-orbit,.cd-celestial-sweep,.cd-moon{animation:none!important;}
+ .cd-appearance,.cd-arceus-art,.cd-world-cycle,.cd-canopy,.cd-life-lights{transition:none!important;}
+}

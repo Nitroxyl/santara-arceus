@@ -6,12 +6,21 @@
   <meta name="theme-color" content="#080d1a">
   <meta name="robots" content="noindex, nofollow">
   <meta name="description" content="A personal encounter with Arceus.">
-  <title>Chao Dong · A Dream Beyond Time | Santara</title>
+  <title>Yao Zong · Of Snow and Starlight | Santara</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../styles/site.css">
+  <link rel="stylesheet" href="../../styles/cd.css">
 </head>
-<body>
-  <main class="experience" id="experience">
+<body class="cd-body">
+  <main class="experience cd-page" id="experience">
     <div class="stars" aria-hidden="true"></div>
+    <div class="cd-aurora" aria-hidden="true"></div>
+    <div class="cd-stardust" aria-hidden="true"></div>
+    <div class="cd-particles" id="cd-particles" aria-hidden="true"></div>
+    <div class="cd-floor" aria-hidden="true"></div>
+    <div class="cd-side-note" aria-hidden="true"><span>IV · THE PASSAGE OF AGES</span><i></i><span>BEYOND A MORTAL HOUR</span></div>
     <div class="sky-veil" aria-hidden="true"></div>
     <div class="dream-curtain" aria-hidden="true"></div>
     <header class="hud">
@@ -19,6 +28,70 @@
       <div class="hud-right"><span class="hud-chapter" id="hud-chapter">AN INVITATION</span><nav class="hud-controls" id="hud-controls" aria-label="Dream controls"><button type="button" class="hud-button" id="memory-button" aria-haspopup="dialog">Revisit words</button><button type="button" class="hud-button" id="instant-button" aria-pressed="false">Instant text: off</button></nav></div>
     </header>
     <div class="stage" aria-hidden="true">
+      <div class="cd-cosmos">
+        <div class="cd-orbit orbit-outer"></div>
+        <div class="cd-orbit orbit-interior"></div>
+        <div class="cd-orbit orbit-tilted"></div>
+        <div class="cd-celestial-sweep"></div>
+        <div class="cd-moon"></div>
+        <div class="cd-world-cycle">
+          <svg class="cd-tree" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="cd-trunk-grad" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0%" stop-color="#637f9d"/>
+                <stop offset="55%" stop-color="#e4d2af"/>
+                <stop offset="100%" stop-color="#b9c6d0"/>
+              </linearGradient>
+              <radialGradient id="cd-orb-grad">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity=".97"/>
+                <stop offset="48%" stop-color="#e8d3b1" stop-opacity=".86"/>
+                <stop offset="100%" stop-color="#c7d8e0" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <ellipse cx="250" cy="449" rx="143" ry="19" fill="#c6d6e4" opacity=".11"/>
+            <g class="cd-branches" fill="none" stroke="url(#cd-trunk-grad)" stroke-linecap="round">
+              <path d="M250 447 C250 380 250 344 249 284 C247 238 244 201 252 173" stroke-width="12"/>
+              <path d="M249 330 Q227 290 179 264 Q150 247 133 210" stroke-width="6"/>
+              <path d="M250 293 Q289 250 333 250 Q360 240 371 209" stroke-width="6"/>
+              <path d="M249 268 Q216 233 205 198 Q193 176 165 165" stroke-width="5"/>
+              <path d="M253 238 Q277 210 281 177 Q294 151 331 140" stroke-width="5"/>
+              <path d="M211 286 Q182 282 158 295 Q135 288 121 276" stroke-width="3"/>
+              <path d="M326 251 Q349 265 375 259 Q388 250 402 245" stroke-width="3"/>
+              <path d="M205 198 Q190 188 173 198 Q157 191 149 179" stroke-width="3"/>
+              <path d="M281 176 Q258 158 260 135 Q254 119 241 111" stroke-width="3"/>
+              <path d="M252 173 Q231 144 231 123 Q217 96 193 90" stroke-width="3"/>
+              <path d="M252 173 Q275 138 285 116 Q310 93 321 81" stroke-width="3"/>
+              <path d="M205 198 Q214 180 220 164" stroke-width="2.5"/>
+              <path d="M334 247 Q337 218 356 194" stroke-width="3"/>
+              <path d="M175 265 Q169 230 145 220" stroke-width="2.4"/>
+            </g>
+            <g class="cd-canopy">
+              <circle cx="202" cy="143" r="48" class="cd-leaf-cloud"/>
+              <circle cx="268" cy="114" r="58" class="cd-leaf-cloud"/>
+              <circle cx="326" cy="152" r="49" class="cd-leaf-cloud"/>
+              <circle cx="163" cy="214" r="41" class="cd-leaf-cloud"/>
+              <circle cx="367" cy="224" r="42" class="cd-leaf-cloud"/>
+              <circle cx="250" cy="203" r="67" class="cd-leaf-cloud"/>
+              <circle cx="191" cy="253" r="33" class="cd-leaf-cloud"/>
+              <circle cx="316" cy="254" r="32" class="cd-leaf-cloud"/>
+            </g>
+            <g class="cd-life-lights">
+              <circle cx="177" cy="166" r="11" fill="url(#cd-orb-grad)"/>
+              <circle cx="241" cy="113" r="14" fill="url(#cd-orb-grad)"/>
+              <circle cx="312" cy="139" r="10" fill="url(#cd-orb-grad)"/>
+              <circle cx="346" cy="208" r="13" fill="url(#cd-orb-grad)"/>
+              <circle cx="227" cy="225" r="13" fill="url(#cd-orb-grad)"/>
+              <circle cx="153" cy="238" r="12" fill="url(#cd-orb-grad)"/>
+            </g>
+          </svg>
+          <div class="cd-season-caption" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="cd-appearance">
+        <div class="cd-appearance-glow"></div>
+        <img class="cd-arceus-art" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png" width="475" height="475" alt="" decoding="async">
+        <div class="cd-arceus-nameplate">ARCEUS <small>THE ORIGINAL ONE</small></div>
+      </div>
       <div class="aura"></div>
       <div class="light-column"></div>
       <div class="horizon-ring"></div>
@@ -34,19 +107,25 @@
     </div>
     <div class="vision-overlay" id="intro-wrap">
       <section class="intro" id="intro" aria-labelledby="intro-title">
-        <p class="eyebrow">A MESSAGE FOR <span id="player-name">Chao Dong</span></p>
+        <p class="cd-prelude">CHAPTER ZERO <span>✧</span> THE TURNING OF AGES</p>
+        <p class="eyebrow">A MESSAGE FOR <span id="player-name">Yao Zong</span></p>
         <h1 id="intro-title">A dream beyond time</h1>
-        <span class="ornament" aria-hidden="true">✧</span>
-        <p class="intro-copy">There is a place between sleep and waking where even the stars fall silent. Tonight, something is waiting for you there.</p>
-        <button class="action" id="start" type="button">Enter the dream</button>
+        <div class="cd-intro-glyph" aria-hidden="true"><span>✧</span></div>
+        <p class="intro-copy">Somewhere beyond the hours, snow falls upon a place that has never known winter. Tonight, the one who witnessed its first dawn has called you here.</p>
+        <p class="cd-intro-whisper">Even eternity is made of moments.</p>
+        <button class="action" id="start" type="button">Enter the dream <span class="cd-action-arrow" aria-hidden="true">↗</span></button>
         <p class="intro-note">Click the dialogue or press Space to continue</p>
       </section>
       <section class="ending hidden" id="ending" aria-labelledby="ending-title">
+        <p class="cd-prelude">CHAPTER ZERO <span>✧</span> THE FIRST DAWN</p>
         <p class="eyebrow">THE DREAM ENDS</p>
-        <h1 id="ending-title">Morning is waiting,<br><span id="ending-name">Chao Dong</span>.</h1>
+        <h1 id="ending-title">Morning is waiting,<br><span id="ending-name">Yao Zong</span>.</h1>
         <div class="gold-rule" aria-hidden="true"></div>
-        <p class="ending-copy">Beyond the familiar streets of Luma Town, your journey is about to begin.</p>
-        <p class="ending-starter">Your partner · <span id="starter-name"></span></p>
+        <p class="ending-copy">The snow has not stopped falling in Luma Town. Your Snorunt is waiting, and your friends are about to begin a new journey beside you.</p>
+        <div class="cd-partner-card">
+          <div class="cd-partner-art"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/361.png" width="475" height="475" loading="lazy" decoding="async" alt="Snorunt official Pokémon artwork"></div>
+          <div class="cd-partner-copy"><span class="cd-partner-kicker">ALREADY BY YOUR SIDE</span><strong id="starter-name">Snorunt</strong><span>A small life. An irreplaceable one.</span></div>
+        </div>
         <button class="action" id="replay" type="button">Experience the dream again</button>
       </section>
     </div>
@@ -71,6 +150,7 @@
     <div class="memory-lines" id="memory-lines" aria-label="Previous dialogue"></div>
     <p class="memory-help">Only the words you have encountered appear here.</p>
   </dialog>
+  <script src="../../scripts/cd-atmosphere.js" defer></script>
   <script type="module">
     import { launch } from "../../scripts/experience.js";
     import { story } from "../../stories/cd.js";
